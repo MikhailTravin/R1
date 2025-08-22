@@ -74,6 +74,9 @@
 		-webkit-line-clamp: 1;
 		overflow: hidden;
 		text-align: left;
+		justify-content: flex-start;
+		-webkit-box-pack: start;
+		width: 100%;
 	}
 	// .select__text
 	&__text {
