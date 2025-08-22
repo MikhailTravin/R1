@@ -208,7 +208,6 @@ $(document).ready(function () {
         indents();
     });
 
-
     //Показать еще
     function initShowMore(containerSelector, itemSelector, buttonSelector, itemsToShow, breakpoint) {
         const $container = $(containerSelector);
@@ -217,6 +216,7 @@ $(document).ready(function () {
         const $items = $content.find(itemSelector);
 
         let clickHandlerAdded = false;
+        let isManualToggle = false;
 
         function checkItemsCount() {
             if ($items.length <= itemsToShow) {
@@ -227,6 +227,8 @@ $(document).ready(function () {
         }
 
         function handleShowMoreClick() {
+            isManualToggle = true;
+
             const isActive = $(this).hasClass('_showmore-active');
 
             if (isActive) {
@@ -243,14 +245,22 @@ $(document).ready(function () {
         }
 
         function toggleShowMore() {
+            if (isManualToggle && $(window).width() <= breakpoint) {
+                return;
+            }
+
             if ($(window).width() <= breakpoint) {
-                $items.each(function (index) {
-                    if (index >= itemsToShow) {
-                        $(this).hide();
-                    } else {
-                        $(this).css('display', 'flex');
-                    }
-                });
+                if (!$button.hasClass('_showmore-active')) {
+                    $items.each(function (index) {
+                        if (index >= itemsToShow) {
+                            $(this).hide();
+                        } else {
+                            $(this).css('display', 'flex');
+                        }
+                    });
+                } else {
+                    $items.css('display', 'flex');
+                }
 
                 if (!clickHandlerAdded) {
                     $button.on('click', handleShowMoreClick);
@@ -266,12 +276,18 @@ $(document).ready(function () {
                     $button.off('click', handleShowMoreClick);
                     clickHandlerAdded = false;
                 }
+
+                isManualToggle = false; 
             }
         }
 
         toggleShowMore();
 
-        $(window).on('resize', toggleShowMore);
+        let resizeTimer;
+        $(window).on('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(toggleShowMore, 250);
+        });
     }
     // Инициализация для блока услуг (5 элементов)
     initShowMore(
