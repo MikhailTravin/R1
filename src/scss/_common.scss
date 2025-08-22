@@ -1,0 +1,355 @@
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--black);
+  .lock & {
+    overflow: hidden;
+  }
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 25;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .menu-hover & {
+    &::before {
+      content: "";
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  .menu-open & {
+    @media (max-width: 1200px) {
+      overflow: hidden;
+    }
+    &::before {
+      content: "";
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+fieldset,
+fieldset legend {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  outline: none;
+  color: currentcolor;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 54px;
+  width: 220px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 5px 10px;
+  background-color: var(--accent);
+  border-radius: 100px;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+  &.btn-border {
+    font-size: 13px;
+    width: 150px;
+    border: 2px solid var(--accent);
+    background-color: var(--white);
+    color: var(--accent);
+    min-height: 42px;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+    @media (max-width: 768px) {
+      min-height: 40px;
+      width: 140px;
+      font-size: 12px;
+    }
+    &:hover {
+      opacity: 1;
+      color: var(--white);
+      background-color: var(--accent);
+    }
+  }
+  @media (max-width: 768px) {
+    min-height: 46px;
+    font-size: 13px;
+    width: 179px;
+  }
+}
+
+.block1 {
+  margin: 0px 0px 113px 0px;
+  @media (max-width: 768px) {
+    margin: 0px 0px 55px 0px;
+  }
+}
+
+.block2 {
+  padding: 0px 0px 113px 0px;
+  @media (max-width: 768px) {
+    padding: 0px 0px 55px 0px;
+  }
+}
+
+.heading-complex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0px 0px 30px 0px;
+  gap: 10px 20px;
+  @media (max-width: 768px) {
+    margin: 0px 0px 21px 0px;
+  }
+
+  // .heading-complex__link
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    text-align: right;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0px 0px 1px 0px;
+    transition: opacity 0.3s;
+    svg {
+      fill: var(--blue);
+      margin: 2px 0px 0px 0px;
+    }
+    span {
+      &.desc {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+      &.mob {
+        display: none;
+        @media (max-width: 768px) {
+          display: block;
+        }
+      }
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 162%;
+    }
+  }
+}
+
+.title1 {
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 116%;
+  color: var(--white);
+  @media (max-width: 768px) {
+    font-size: 36px;
+    line-height: 117%;
+  }
+}
+
+.title2 {
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 121%;
+  @media (max-width: 768px) {
+    font-size: 25px;
+    line-height: 128%;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+    span {
+      display: none;
+    }
+  }
+}
+
+.showmore-button {
+  width: 100%;
+  min-height: 40px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 40px;
+  margin: 15px 0px 0px 0px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--blue);
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    svg {
+      fill: var(--blue);
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+  &._showmore-active {
+    margin: 15px 0px 0px 0px;
+    span {
+      &:first-child {
+        display: none;
+      }
+      &:last-child {
+        display: flex;
+      }
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  align-items: start;
+  gap: 14px;
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+  // .contacts__phone
+
+  &__phone {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    a {
+      font-weight: 700;
+      font-size: 20px;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    span {
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+
+  // .contacts__icons
+
+  &__icons {
+    margin: -2px 0px 0px 0px;
+    display: flex;
+    gap: 11px;
+    img {
+      width: 23px;
+      height: 23px;
+    }
+    @media (max-width: 768px) {
+      gap: 15px;
+    }
+  }
+}
+.work {
+  display: flex;
+  align-items: start;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 147%;
+  gap: 10px;
+  img {
+    width: 18px;
+    height: 18px;
+    margin: 3px 0px 0px 0px;
+  }
+  @media (max-width: 768px) {
+    br {
+      display: none;
+    }
+  }
+}
+.location {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2px;
+  span {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+  }
+  a {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--accent);
+    padding: 1px 0px 0px 0px;
+    border-bottom: 1px solid rgba(0, 128, 197, 0.2);
+    transition: border-bottom 0.3s;
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  span {
+    font-weight: 300;
+    font-size: 14px;
+  }
+  // .socials__icons
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 25px;
+    a {
+      display: flex;
+      transition: opacity 0.3s;
+      svg {
+        fill: var(--black);
+      }
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
