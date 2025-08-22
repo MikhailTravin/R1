@@ -66,12 +66,8 @@
 	// .select__content
 	&__content {
 		flex: 1 1 auto;
-		text-overflow: ellipsis;
 		display: flex;
 		align-items: center;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 1;
 		overflow: hidden;
 		text-align: left;
 		justify-content: flex-start;
