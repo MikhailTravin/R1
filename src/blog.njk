@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Блог</title>
+	{% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+	<div class="main-wrapper-outer">
+		{% include 'blocks/header.njk' %}
+		<main class="main">
+
+			<div class="breadcrumbs">
+				<div class="container">
+					<ul>
+						<li>
+							<a href="#">
+								<svg aria-hidden="true" width="16" height="9">
+									<use xlink:href="img/sprite.svg#arrow2"></use>
+								</svg>
+								Главная
+								<img src="img/arrow1.svg" alt="">
+							</a>
+						</li>
+						<li><span>Блог</span></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="block-blog block1">
+				<div class="container">
+					<div class="heading-complex heading-complex-blog">
+						<h2 class="title2">
+							Читайте наш блог
+						</h2>
+						<div class="filter-navigation">
+							<button data-filter="all" type="button"
+								class="filter-navigation__title _active">все</button>
+							<button data-filter="dvigatel" type="button"
+								class="filter-navigation__title">двигатель</button>
+							<button data-filter="obzory-mazda" type="button" class="filter-navigation__title">обзоры
+								mazda</button>
+							<button data-filter="pynkt" type="button" class="filter-navigation__title">какой то
+								пункт</button>
+						</div>
+					</div>
+					<div class="block-blog__body">
+						<a data-filter="dvigatel" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image2.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="obzory-mazda" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image3.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="dvigatel" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image13.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="obzory-mazda" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image2.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="dvigatel" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image3.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="obzory-mazda" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image4.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="pynkt" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image2.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="obzory-mazda" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image3.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+						<a data-filter="pynkt" href="#" class="cart-blog">
+							<img loading="lazy" src="img/image4.webp" alt="">
+							<div class="cart-blog__item">
+								<div class="cart-blog__name">про двигатель</div>
+								<div class="cart-blog__title">
+									Smashing Podcast Episode 10 With Trine Falbe And Martin Michael Frederiksen
+									Designing
+								</div>
+								<div class="cart-blog__data">25 сентября, 2021 г.</div>
+							</div>
+						</a>
+					</div>
+					{% include 'blocks/pagination-controls.njk' %}
+				</div>
+			</div>
+
+		</main>
+		{% include 'blocks/footer.njk' %}
+	</div>
+	{% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

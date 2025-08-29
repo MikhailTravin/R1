@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Контакты</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg aria-hidden="true" width="16" height="9">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                                Главная
+                                <img src="img/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li><span>Контакты</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-contacts block1">
+                <div class="container">
+                    <div class="block-contacts__content">
+                        <div class="block-contacts__body">
+                            <div class="left-block-contacts">
+                                <h2 class="title2">Контакты</h2>
+                                <div class="left-block-contacts__top top-block-contacts">
+                                    <div class="top-block-contacts__address">
+                                        <div class="location">
+                                            <span>г.Москва, СВАО, 1-я Мытищинская улица д.27, строение 3</span>
+                                        </div>
+                                        <div class="work">
+                                            <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                            <span>Работаем ежедневно с 9:00 до 21:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="top-block-contacts__contacts">
+                                        <div class="contacts">
+                                            <svg aria-hidden="true" width="19" height="19">
+                                                <use xlink:href="img/sprite.svg#phone"></use>
+                                            </svg>
+                                            <div class="contacts__phone">
+                                                <a href="tel:84992882443">8 (499) 288-24-43</a>
+                                                <span>По всем вопросам</span>
+                                            </div>
+                                            <div class="contacts__icons">
+                                                <img loading="lazy" src="img/icon/whatsapp.svg" alt="">
+                                                <img loading="lazy" src="img/icon/viber.svg" alt="">
+                                                <img loading="lazy" src="img/icon/telegram.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <a href="mailto:service@r1.moscow" class="email">service@r1.moscow</a>
+                                    </div>
+                                </div>
+                                <div class="left-block-contacts__bottom bottom-block-contacts">
+                                    <div class="bottom-block-contacts__column">
+                                        <span>Шиномонтаж:</span>
+                                        <a href="tel:84992882443" class="bottom-block-contacts__phone">8 (499)
+                                            288-24-43</a>
+                                    </div>
+                                    <div class="bottom-block-contacts__column">
+                                        <span>По вопросам сотрудничества:</span>
+                                        <a href="mailto:info@r1.moscow" class="email">info@r1.moscow</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-contacts__right">
+                                <form action="#" class="form">
+                                    <div class="form__top">
+                                        <div class="title2">Свяжитесь с нами</div>
+                                    </div>
+                                    <div class="form__center">
+                                        <div class="form__input">
+                                            <svg aria-hidden="true" width="16" height="16">
+                                                <use xlink:href="img/sprite.svg#user"></use>
+                                            </svg>
+                                            <input autocomplete="off" type="text" name="form[]" placeholder="Ваше Имя">
+                                        </div>
+                                        <div class="form__input">
+                                            <svg aria-hidden="true" width="18" height="18">
+                                                <use xlink:href="img/sprite.svg#phone2"></use>
+                                            </svg>
+                                            <input data-required autocomplete="off" type="text" name="form[]"
+                                                placeholder="Номер телефона">
+                                        </div>
+                                        <div class="form__input">
+                                            <svg aria-hidden="true" width="18" height="18">
+                                                <use xlink:href="img/sprite.svg#chat"></use>
+                                            </svg>
+                                            <textarea placeholder="Комментарий"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form__bottom">
+                                        <p>
+                                            Нажимая на кнопку “Оставить заявку”, Вы даете согласие
+                                            на обработку Ваших персональных данных
+                                        </p>
+                                        <button type="submit" class="btn">отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div data-da=".block-contacts__body,992, 1" id="map" class="block-contacts__map"></div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&amp;lang=ru_RU&amp;_v=20240623012845"></script>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

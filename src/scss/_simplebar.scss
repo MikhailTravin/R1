@@ -203,3 +203,17 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
+.dropdowm-search__simplebar {
+    .simplebar-track.simplebar-vertical {
+        width: 4px;
+        background: transparent;
+        right: 6px;
+        top: 16px;
+        bottom: 16px;
+    }
+    .simplebar-scrollbar {
+        border-radius: 2px;
+        background: var(--grey-stroke);
+    }
+}
