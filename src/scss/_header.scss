@@ -666,6 +666,10 @@
                 height: 30px;
             }
         }
+        @media (max-width: 370px) {
+            margin: 0px 10px 0px 0px;
+            padding: 0px 10px 0px 0px;
+        }
     }
 
     // .top-header-other__contacts
@@ -679,6 +683,10 @@
             margin: 0px 15px 0px 0px;
             padding: 0px 15px 0px 0px;
             border-right: 1px solid var(--grey-stroke);
+        }
+        @media (max-width: 370px) {
+            margin: 0px 10px 0px 0px;
+            padding: 0px 10px 0px 0px;
         }
     }
 
@@ -710,9 +718,9 @@
         align-items: center;
         justify-content: space-between;
         gap: 66px;
-        @media (max-width: 768px){
-              gap: 0px;
-              padding: 4px;
+        @media (max-width: 768px) {
+            gap: 0px;
+            padding: 4px;
         }
     }
 
@@ -811,6 +819,10 @@
             margin: 0px 15px 0px 0px;
             padding: 0px 15px 0px 0px;
             border-right: 1px solid var(--grey-stroke);
+        }
+        @media (max-width: 370px) {
+            margin: 0px 10px 0px 0px;
+            padding: 0px 10px 0px 0px;
         }
     }
 }
