@@ -722,6 +722,10 @@ a {
   box-shadow: 0 8px 16px 0 rgba(21, 22, 23, 0.12);
   background: var(--white);
   color: var(--black);
+  @media (max-width: 768px){
+      left: 8px;
+      width: calc(100% - 16px);
+  }
   .btn {
     min-height: 44px;
     width: 100%;
