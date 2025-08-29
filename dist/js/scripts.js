@@ -185,6 +185,21 @@ $(document).ready(function () {
             }
         });
     }
+    const sliderContainers = $('.cart-catalog__slider');
+    sliderContainers.each(function (index) {
+        const paginationEl = $(this).closest('.cart-catalog').find('.cart-catalog__pagination')[0];
+        new Swiper(this, {
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            speed: 400,
+            pagination: {
+                el: paginationEl,
+                clickable: true,
+            }
+        });
+    });
 
     function indents() {
         const $pagination = $('.top-block-intro__pagination');
@@ -277,7 +292,7 @@ $(document).ready(function () {
                     clickHandlerAdded = false;
                 }
 
-                isManualToggle = false; 
+                isManualToggle = false;
             }
         }
 
@@ -1343,6 +1358,139 @@ $(document).ready(function () {
 
             if (!isClickInsideHeaderTop && !isClickOnMenuIcon) {
                 $('html').removeClass("menu-open");
+            }
+        });
+    }
+
+    //Фильтр
+    const $filterButtons = $('.filter-navigation__title');
+    const $blogItems = $('.cart-blog');
+
+    if ($filterButtons.length) {
+        $filterButtons.on('click', function () {
+            const filterValue = $(this).data('filter');
+
+            $filterButtons.removeClass('_active');
+            $(this).addClass('_active');
+
+            $blogItems.each(function () {
+                const itemFilter = $(this).data('filter');
+
+                if (filterValue === 'all' || filterValue === itemFilter) {
+                    $(this).removeClass('_hide');
+                } else {
+                    $(this).addClass('_hide');
+                }
+            });
+        });
+    }
+
+    //Яндекс карта
+    const $map = $('#map');
+    if ($map.length) {
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map('map', {
+                center: [55.801561, 37.647558],
+                zoom: 15,
+                controls: ['zoomControl'],
+                behaviors: ['drag']
+            });
+            var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                latitude: 55.801561,
+                longitude: 37.647558,
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/location.svg',
+                iconColor: '#ec6608',
+                iconImageSize: [48, 54],
+                iconImageOffset: [0, -55],
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        };
+    }
+
+    //Фильтр каталог
+    const $filterButton = $('.filter__button');
+    const $filterElement = $('.filter');
+
+    if ($filterButton.length && $filterElement.length) {
+        $filterButton.on('click', function (e) {
+            e.stopPropagation();
+            $('html').toggleClass('filter-open');
+        });
+
+        $(document).on('click', function (e) {
+            if (!$filterElement.is(e.target) &&
+                !$filterElement.has(e.target).length &&
+                !$filterButton.is(e.target)) {
+                $('html').removeClass('filter-open');
+            }
+        });
+
+        $filterElement.on('click', function (e) {
+            e.stopPropagation();
+        });
+    }
+
+    //Количество
+    function formQuantity() {
+        $(document).on('click', '[data-quantity-plus], [data-quantity-minus]', function (e) {
+            e.preventDefault();
+
+            const $target = $(e.target);
+            const $button = $target.closest('[data-quantity-plus], [data-quantity-minus]');
+            const $quantity = $button.closest('[data-quantity]');
+            const $valueElement = $quantity.find('[data-quantity-value]');
+
+            let value = parseInt($valueElement.val());
+            const maxValue = $valueElement.data('quantity-max');
+            const minValue = $valueElement.data('quantity-min');
+
+            if ($button.is('[data-quantity-plus]')) {
+                value++;
+                if (maxValue && maxValue < value) {
+                    value = maxValue;
+                }
+            } else {
+                value--;
+                if (minValue) {
+                    if (minValue > value) {
+                        value = minValue;
+                    }
+                } else if (value < 1) {
+                    value = 1;
+                }
+            }
+
+            $valueElement.val(value);
+        });
+    }
+    formQuantity();
+
+    //Поиск
+    const $searchElements = $('.search');
+    if ($searchElements.length) {
+        $searchElements.each(function () {
+            const $currentSearch = $(this);
+            const $searchContent = $currentSearch.find('.search__content');
+
+            if ($searchContent.length) {
+                $searchContent.on('click', function (e) {
+                    e.stopPropagation();
+
+                    $searchElements.not($currentSearch).removeClass('_active');
+
+                    $currentSearch.toggleClass('_active');
+                });
+            }
+        });
+
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.search').length) {
+                $searchElements.removeClass('_active');
             }
         });
     }
