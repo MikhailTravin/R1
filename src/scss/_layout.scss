@@ -8,7 +8,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  overflow: hidden;
 }
 
 .main {
@@ -16,8 +15,15 @@
   flex-shrink: 1;
   padding: 121px 0px 0px 0px;
   background: var(--grey-background);
+  overflow: hidden;
   @media (max-width: 768px) {
     padding: 83px 0px 0px 0px;
+  }
+  &.order {
+    overflow: visible;
+    @media (max-width: 992px) {
+      overflow: hidden;
+    }
   }
   &.home {
     background: var(--white);
@@ -25,8 +31,8 @@
   }
   &.other {
     padding: 122px 0px 0px 0px;
-    @media (max-width: 768px){
-        padding: 113px 0px 0px 0px;
+    @media (max-width: 768px) {
+      padding: 113px 0px 0px 0px;
     }
   }
 }

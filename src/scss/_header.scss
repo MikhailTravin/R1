@@ -201,6 +201,7 @@
                 filter: invert(64%) sepia(75%) saturate(1245%) hue-rotate(172deg) brightness(95%) contrast(102%);
             }
             &:hover {
+                color: var(--white);
                 img {
                     filter: none;
                 }
