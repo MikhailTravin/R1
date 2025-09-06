@@ -185,6 +185,78 @@ $(document).ready(function () {
             }
         });
     }
+    if ($('.block-reviews2__slider').length > 0) {
+        const blockReviews2 = new Swiper('.block-reviews2__slider', {
+            observer: true,
+            observeParents: true,
+            slidesPerView: 4,
+            spaceBetween: 20,
+            speed: 400,
+            navigation: {
+                nextEl: '.block-reviews2__arrow-next',
+                prevEl: '.block-reviews2__arrow-prev',
+            },
+            pagination: {
+                el: '.block-reviews2__pagination',
+                clickable: true,
+                type: 'bullets'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 15,
+                },
+                480: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    }
+    if ($('.block-certificates__slider').length > 0) {
+        const blockCertificates = new Swiper('.block-certificates__slider', {
+            observer: true,
+            observeParents: true,
+            slidesPerView: 4,
+            spaceBetween: 20,
+            speed: 400,
+            navigation: {
+                nextEl: '.block-certificates__arrow-next',
+                prevEl: '.block-certificates__arrow-prev',
+            },
+            pagination: {
+                el: '.block-certificates__pagination',
+                clickable: true,
+                type: 'bullets'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 15,
+                },
+                480: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    }
     const sliderContainers = $('.cart-catalog__slider');
     sliderContainers.each(function (index) {
         const paginationEl = $(this).closest('.cart-catalog').find('.cart-catalog__pagination')[0];
@@ -253,9 +325,11 @@ $(document).ready(function () {
                     }
                 });
                 $(this).removeClass('_showmore-active');
+                $container.removeClass('_showmore-open');
             } else {
                 $items.show();
                 $(this).addClass('_showmore-active');
+                $container.addClass('_showmore-open');
             }
         }
 
@@ -273,8 +347,10 @@ $(document).ready(function () {
                             $(this).css('display', 'flex');
                         }
                     });
+                    $container.removeClass('_showmore-open');
                 } else {
                     $items.css('display', 'flex');
+                    $container.addClass('_showmore-open');
                 }
 
                 if (!clickHandlerAdded) {
@@ -286,6 +362,7 @@ $(document).ready(function () {
             } else {
                 $items.css('display', 'flex');
                 $button.removeClass('_showmore-active').attr('hidden', 'true');
+                $container.removeClass('_showmore-open');
 
                 if (clickHandlerAdded) {
                     $button.off('click', handleShowMoreClick);
@@ -304,6 +381,7 @@ $(document).ready(function () {
             resizeTimer = setTimeout(toggleShowMore, 250);
         });
     }
+
     // Инициализация для блока услуг (5 элементов)
     initShowMore(
         '[data-showmore="992,max"].block-services__content',
@@ -312,6 +390,7 @@ $(document).ready(function () {
         5,
         992
     );
+
     // Инициализация для блока отзывов (2 элемента)
     initShowMore(
         '[data-showmore="992,max"].left-block-reviews__content',
@@ -319,6 +398,15 @@ $(document).ready(function () {
         '[data-showmore-button]',
         2,
         992
+    );
+
+    // Инициализация для блока машин (5 элементов)
+    initShowMore(
+        '[data-showmore="768,max"].block-prices__body',
+        '.block-prices__column',
+        '[data-showmore-button]',
+        6,
+        768
     );
 
     //Динамический адаптив
@@ -1924,4 +2012,261 @@ $(document).ready(function () {
         bodyUnlock();
         $("html").removeClass("menu-open");
     }
+
+    //Наблюдатель
+    class ScrollWatcher {
+        constructor(props) {
+            let defaultConfig = {
+                logging: true,
+            }
+            this.config = $.extend(defaultConfig, props);
+            this.observer;
+            if (!$('html').hasClass('watcher')) {
+                this.scrollWatcherRun();
+            }
+        }
+
+        scrollWatcherUpdate() {
+            this.scrollWatcherRun();
+        }
+
+        scrollWatcherRun() {
+            $('html').addClass('watcher');
+            this.scrollWatcherConstructor($('[data-watch]'));
+        }
+
+        scrollWatcherConstructor(items) {
+            if (items.length) {
+                let uniqParams = [];
+
+                items.each(function () {
+                    let $item = $(this);
+                    let dataWatch = $item.data('watch');
+                    let dataWatchRoot = $item.data('watch-root');
+                    let dataWatchMargin = $item.data('watch-margin');
+                    let dataWatchThreshold = $item.data('watch-threshold');
+
+                    if (dataWatch === 'navigator' && !dataWatchThreshold) {
+                        let valueOfThreshold;
+                        if ($item[0].clientHeight > 2) {
+                            valueOfThreshold = window.innerHeight / 2 / ($item[0].clientHeight - 1);
+                            if (valueOfThreshold > 1) {
+                                valueOfThreshold = 1;
+                            }
+                        } else {
+                            valueOfThreshold = 1;
+                        }
+                        $item.attr('data-watch-threshold', valueOfThreshold.toFixed(2));
+                    }
+
+                    let paramString = (dataWatchRoot || 'null') + '|' + (dataWatchMargin || '0px') + '|' + (dataWatchThreshold || 0);
+                    if ($.inArray(paramString, uniqParams) === -1) {
+                        uniqParams.push(paramString);
+                    }
+                });
+
+                $.each(uniqParams, (index, uniqParam) => {
+                    let uniqParamArray = uniqParam.split('|');
+                    let paramsWatch = {
+                        root: uniqParamArray[0],
+                        margin: uniqParamArray[1],
+                        threshold: uniqParamArray[2]
+                    };
+
+                    let groupItems = items.filter(function () {
+                        let $item = $(this);
+                        let watchRoot = $item.data('watch-root');
+                        let watchMargin = $item.data('watch-margin');
+                        let watchThreshold = $item.data('watch-threshold');
+
+                        return (String(watchRoot || 'null') === paramsWatch.root &&
+                            String(watchMargin || '0px') === paramsWatch.margin &&
+                            String(watchThreshold || 0) === paramsWatch.threshold);
+                    });
+
+                    let configWatcher = this.getScrollWatcherConfig(paramsWatch);
+                    if (configWatcher) {
+                        this.scrollWatcherInit(groupItems, configWatcher);
+                    }
+                });
+            }
+        }
+
+        getScrollWatcherConfig(paramsWatch) {
+            let configWatcher = {};
+
+            if (paramsWatch.root !== 'null') {
+                let $root = $(paramsWatch.root);
+                if ($root.length) {
+                    configWatcher.root = $root[0];
+                }
+            }
+
+            configWatcher.rootMargin = paramsWatch.margin;
+
+            if (paramsWatch.margin.indexOf('px') < 0 && paramsWatch.margin.indexOf('%') < 0) {
+                return null;
+            }
+
+            if (paramsWatch.threshold === 'prx') {
+                paramsWatch.threshold = [];
+                for (let i = 0; i <= 1.0; i += 0.005) {
+                    paramsWatch.threshold.push(i);
+                }
+            } else {
+                paramsWatch.threshold = paramsWatch.threshold.split(',');
+            }
+
+            configWatcher.threshold = paramsWatch.threshold;
+            return configWatcher;
+        }
+
+        scrollWatcherCreate(configWatcher) {
+            this.observer = new IntersectionObserver((entries, observer) => {
+                $.each(entries, (index, entry) => {
+                    this.scrollWatcherCallback(entry, observer);
+                });
+            }, configWatcher);
+        }
+
+        scrollWatcherInit(items, configWatcher) {
+            this.scrollWatcherCreate(configWatcher);
+            items.each((index, item) => {
+                this.observer.observe(item);
+            });
+        }
+
+        scrollWatcherIntersecting(entry, targetElement) {
+            let $target = $(targetElement);
+            if (entry.isIntersecting) {
+                if (!$target.hasClass('_watcher-view')) {
+                    $target.addClass('_watcher-view');
+                }
+            } else {
+                if ($target.hasClass('_watcher-view')) {
+                    $target.removeClass('_watcher-view');
+                }
+            }
+        }
+
+        scrollWatcherOff(targetElement, observer) {
+            observer.unobserve(targetElement);
+        }
+
+        scrollWatcherCallback(entry, observer) {
+            const targetElement = entry.target;
+            this.scrollWatcherIntersecting(entry, targetElement);
+
+            let $target = $(targetElement);
+            if ($target.attr('data-watch-once') && entry.isIntersecting) {
+                this.scrollWatcherOff(targetElement, observer);
+            }
+
+            $(document).trigger(new $.Event("watcherCallback", {
+                detail: {
+                    entry: entry
+                }
+            }));
+        }
+    }
+    modules_flsModules.watcher = new ScrollWatcher({});
+
+    //Прокрутка к блоку
+    let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+        const targetBlockElement = $(targetBlock);
+        if (targetBlockElement.length) {
+            let headerItem = '';
+            let headerItemHeight = 0;
+            if (noHeader) {
+                headerItem = 'header.header';
+                const headerElement = $(headerItem);
+                if (!headerElement.hasClass('_header-scroll')) {
+                    headerElement.css('transition-duration', '0s');
+                    headerElement.addClass('_header-scroll');
+                    headerItemHeight = headerElement.outerHeight();
+                    headerElement.removeClass('_header-scroll');
+                    setTimeout(() => {
+                        headerElement.css('transition-duration', '');
+                    }, 0);
+                } else {
+                    headerItemHeight = headerElement.outerHeight();
+                }
+            }
+            if ($('html').hasClass("menu-open")) {
+                menuClose();
+            }
+
+            let targetBlockElementPosition = targetBlockElement.offset().top;
+            targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+            targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+
+            $('html, body').animate({
+                scrollTop: targetBlockElementPosition
+            }, speed);
+        }
+    };
+    function pageNavigation() {
+        $(document).on("click", pageNavigationAction);
+        $(document).on("watcherCallback", pageNavigationAction);
+
+        function pageNavigationAction(e) {
+            if (e.type === "click") {
+                const $targetElement = $(e.target);
+                const $gotoLink = $targetElement.closest('[data-goto]');
+
+                if ($gotoLink.length) {
+                    const gotoLinkSelector = $gotoLink.data('goto') || '';
+                    const noHeader = $gotoLink.is('[data-goto-header]');
+                    const gotoSpeed = $gotoLink.data('goto-speed') || 500;
+                    const offsetTop = $gotoLink.data('goto-top') ? parseInt($gotoLink.data('goto-top')) : 0;
+
+                    if (modules_flsModules.fullpage) {
+                        const $fullpageSection = $(gotoLinkSelector).closest('[data-fp-section]');
+                        const fullpageSectionId = $fullpageSection.length ? +$fullpageSection.data('fp-id') : null;
+
+                        if (fullpageSectionId !== null) {
+                            modules_flsModules.fullpage.switchingSection(fullpageSectionId);
+                            if ($('html').hasClass("menu-open")) {
+                                menuClose();
+                            }
+                        }
+                    } else {
+                        gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                    }
+                    e.preventDefault();
+                }
+            } else if (e.type === "watcherCallback" && e.detail) {
+                const entry = e.detail.entry;
+                const targetElement = entry.target;
+
+                if ($(targetElement).data('watch') === 'navigator') {
+                    const $navigatorActiveItem = $('[data-goto]._navigator-active');
+                    let $navigatorCurrentItem;
+
+                    if (targetElement.id && $(`[data-goto="#${targetElement.id}"]`).length) {
+                        $navigatorCurrentItem = $(`[data-goto="#${targetElement.id}"]`);
+                    } else if (targetElement.classList.length) {
+                        for (let index = 0; index < targetElement.classList.length; index++) {
+                            const element = targetElement.classList[index];
+                            if ($(`[data-goto=".${element}"]`).length) {
+                                $navigatorCurrentItem = $(`[data-goto=".${element}"]`);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (entry.isIntersecting) {
+                        if ($navigatorCurrentItem) {
+                            $navigatorCurrentItem.addClass('_navigator-active');
+                        }
+                    } else {
+                        if ($navigatorCurrentItem) {
+                            $navigatorCurrentItem.removeClass('_navigator-active');
+                        }
+                    }
+                }
+            }
+        }
+    }
+    pageNavigation();
 });
