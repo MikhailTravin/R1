@@ -214,6 +214,67 @@ body::after {
     }
 }
 
+#sign-up {
+    @media (max-width: 768px) {
+        padding: 0px 0px 0px 0px;
+    }
+    .popup__wrapper {
+        @media (max-width: 768px) {
+            height: 100%;
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+    .popup__content {
+        max-width: 980px;
+        padding: 0px 0px 0px 0px;
+        @media (max-width: 768px) {
+            height: 100%;
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+    .popup__close {
+        right: 15px;
+        top: 15px;
+        width: 16px;
+        height: 16px;
+        @media (max-width: 768px) {
+            width: 14px;
+            height: 14px;
+            top: 20px;
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+    .popup-request-call__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media (max-width: 768px) {
+            justify-content: start;
+        }
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media (max-width: 768px) {
+            justify-content: start;
+        }
+    }
+}
+
 .popup-request-call {
     .form {
         padding: 0px 0px 0px 0px;
