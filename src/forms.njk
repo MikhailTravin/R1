@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Форма</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        <header data-lp class="header header-other2 header-forms">
+            <div class="top-header-other">
+                <div class="container">
+                    <div class="top-header-other__content">
+                        <a href="#" class="top-header-other__logo">
+                            <img src="img/logo.svg" alt="">
+                        </a>
+                        <div class="top-header-other__right">
+                            <a href="#" class="top-header-other__vk">
+                                <img src="img/icon/vk.svg" alt="">
+                            </a>
+                            <a href="#" class="top-header-other__max">
+                                <img src="img/icon/max.svg" alt="">
+                            </a>
+                            <div data-da=".menu, 1200" class="top-header-other__contacts2">
+                                <div class="locations">
+                                    <div class="location">
+                                        <img src="img/icon/location.svg" alt="">
+                                        <div class="location__text">
+                                            <div class="location__title">г. Москва, Тюменский проезд 5 стр. 1</div>
+                                        </div>
+                                    </div>
+                                    <div class="location">
+                                        <img src="img/icon/location.svg" alt="">
+                                        <div class="location__text">
+                                            <div class="location__title">г. Москва, Мелитопольская д. 1, стр. 2</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="socials">
+                                    <div class="socials__icons">
+                                        <a href="#">
+                                            <img src="img/icon/vk.svg" alt="">
+                                        </a>
+                                        <a href="#">
+                                            <img src="img/icon/max.svg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="top-header-other__contacts">
+                                <div data-da=".menu, 768" class="contacts">
+                                    <div class="contacts__icon">
+                                        <svg aria-hidden="true" width="16" height="16">
+                                            <use xlink:href="img/sprite.svg#phone"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="contacts__phone">
+                                        <a href="tel:74992882443">+7 (499) 290 05-26</a>
+                                        <span>Ежедневно с 9:00 до 21:00</span>
+                                    </div>
+                                </div>
+                                <a href="#" data-popup="#request-call" class="btn btn-border">
+                                    <span>заказать обратный звонок</span>
+                                    <svg aria-hidden="true" width="14" height="14">
+                                        <use xlink:href="img/sprite.svg#phone"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main main-forms">
+
+            <div class="block-forms">
+                <div class="container">
+                    <div class="block-forms__content">
+                        <form action="#">
+                            <div class="form">
+                                <div class="form__top">
+                                    <div class="title2">Оставить заявку на обслуживание</div>
+                                    <span>
+                                        устраним любые неисправности
+                                    </span>
+                                </div>
+                                <div class="form__center">
+                                    <div class="form__input">
+                                        <input autocomplete="off" type="text" name="form[]" placeholder="Ваше Имя">
+                                        <svg aria-hidden="true" width="16" height="16">
+                                            <use xlink:href="img/sprite.svg#user"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="form__input phone">
+                                        <input data-required autocomplete="off" type="text" name="form[]"
+                                            placeholder="Номер телефона">
+                                        <svg aria-hidden="true" width="18" height="18">
+                                            <use xlink:href="img/sprite.svg#phone2"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="form__bottom">
+                                    <button type="submit" class="btn">оставить заявку</button>
+                                    <p>
+                                        Отправляя форму, вы соглашаетесь с правилами обработки
+                                        ваших личных данных <a href="#">«Политика конфиденциальности»</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="block-forms__image">
+                            <div class="block-forms__title">КОМАНДА R1</div>
+                            <img loading="lazy" src="img/image11.webp" alt="" class="block-forms__pic1">
+                            <img loading="lazy" src="img/image12.webp" alt="" class="block-forms__pic2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <div class="footer footer2 footer-forms">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__top top-footer">
+                        <div class="top-footer__left">
+                            <a href="#" class="top-footer__logo">
+                                <img loading="lazy" src="img/logo.svg" alt="">
+                            </a>
+                            <div class="top-footer__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Политика конфиденциальности</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Политика в отношении использования файлов cookies</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Согласие на обработку персональных данных</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__bottom bottom-footer">
+                        <div class="bottom-footer__copy">© 2017 - 2025 R1 - Автосервис R1. Все права защищены.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'blocks/scripts.njk' %}
+    {% include 'blocks/popup.njk' %}
+</body>
+
+</html>

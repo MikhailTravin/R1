@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Оформление заказа</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer"> 
+        {% include 'blocks/header.njk' %}
+        <main class="main other order">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg aria-hidden="true" width="16" height="9">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                                Главная
+                                <img src="img/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li><span>Оформление заказа</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-order">
+                <div class="container">
+                    <h1 class="title2">Оформление заказа</h1>
+                    <form action="/order/" method="POST" name="ORDER_FORM" id="bx-soa-order-form"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="sessid" id="sessid" value="fca377f5ad99a9f512f20a6c7cacc8fa"> <input
+                            type="hidden" name="soa-action" value="saveOrderAjax">
+                        <input type="hidden" name="location_type" value="code">
+                        <input type="hidden" name="BUYER_STORE" id="BUYER_STORE" value="0">
+                        <div id="bx-soa-order"
+                            class="block-order__content orderform--v1 bx-blue order-block order-block__with-sidebar">
+                            <div class="left-block-order bx-soa order-body">
+                                <div id="bx-soa-region" data-visited="true"
+                                    class="left-block-order__column bx-soa-section bx-active order__item bx-selected bx-step-completed">
+                                    <h2 class="left-block-order__title order__title">
+                                        Тип покупателя и адрес доставки
+                                    </h2>
+                                    <div class="left-block-order__content bx-soa-section-content container-fluid">
+                                        <div class="alert alert-danger" style="display: none;"></div>
+                                        <div class="left-block-order__body bx_soa_location row">
+                                            <div class="left-block-order__checkboxes shipping__item">
+                                                <div class="left-block-order__checkbox bx-soa-pp-company bx-soa-pp-company-item bx-selected"
+                                                    data-id="1">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_PAY_SYSTEM_ID_1" name="PAY_SYSTEM_ID"
+                                                            type="checkbox" class="bx-soa-pp-company-checkbox"
+                                                            value="1">
+                                                    </div>
+                                                    <div class="left-block-order__smalltitle bx-soa-pp-company-smalltitle"
+                                                        lang="ru">
+                                                        <span class="smalltitle-pc">Физическое лицо</span>
+                                                        <span class="smalltitle-mob">Физ. лицо</span>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix">
+                                                        <div class="col-sm-5 bx-soa-pp-desc-container">
+                                                            <div class="bx-soa-pp-company"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="left-block-order__checkbox bx-soa-pp-company bx-soa-pp-company-item"
+                                                    data-id="7">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_PAY_SYSTEM_ID_7" name="PAY_SYSTEM_ID"
+                                                            type="checkbox" class="bx-soa-pp-company-checkbox"
+                                                            value="7">
+                                                    </div>
+                                                    <div class="left-block-order__smalltitle bx-soa-pp-company-smalltitle"
+                                                        lang="ru">
+                                                        <span class="smalltitle-pc">Юридическое лицо</span>
+                                                        <span class="smalltitle-mob">Юр. лицо</span>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix hidden"></div>
+                                                </div>
+                                            </div>
+                                            <div data-property-id-row="5"
+                                                class="left-block-order__input form-group bx-soa-location-input-container">
+                                                <label for="altProperty"
+                                                    class="left-block-order__label bx-soa-custom-label">Адрес
+                                                    доставки</label>
+                                                <input id="altProperty" type="text" placeholder="Город, улица, дом (кв)"
+                                                    autocomplete="city"
+                                                    class="form-control bx-soa-customer-input bx-ios-fix"
+                                                    name="ORDER_PROP_5">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="bx-soa-delivery" data-visited="true"
+                                    class="left-block-order__column bx-soa-section bx-active order__item bx-step-completed">
+                                    <h2 class="left-block-order__title order__title">
+                                        Способ доставки
+                                    </h2>
+                                    <div class="left-block-order__delivery bx-soa-section-content container-fluid">
+                                        <div class="alert alert-danger" style="display: none;"></div>
+                                        <div class="left-block-order__delivery-content bx-soa-pp row">
+                                            <div
+                                                class="left-block-order__checkboxes2 col-sm-12 bx-soa-pp-item-container">
+                                                <div class="left-block-order__checkbox2 bx-soa-pp-company bx-soa-pp-company-item bx-soa-pp-company--hasprice bx-selected"
+                                                    data-id="10">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_DELIVERY_ID_10" name="DELIVERY_ID" type="checkbox"
+                                                            class="bx-soa-pp-company-checkbox" value="10">
+                                                    </div>
+                                                    <div class="left-block-order__smalltitles">
+                                                        <div class="left-block-order__smalltitle2 bx-soa-pp-company-smalltitle"
+                                                            lang="ru">
+                                                            Доставка до транспортной
+                                                            компании «Деловые Линии»
+                                                        </div>
+                                                        <div class="left-block-order__cost bx-soa-pp-delivery-cost">
+                                                            <div class="left-block-order__name bx-soa-pp-list-termin"
+                                                                lang="ru">Стоимость:</div>
+                                                            <div class="left-block-order__price bx-soa-pp-list-description"
+                                                                lang="ru">500 ₽</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix hidden"></div>
+                                                    <div class="left-block-order__descr bx-soa-pp-company-description">
+                                                        Стоимость доставки транспортной компанией оплачивается отдельно,
+                                                        при получении заказа
+                                                        в пункте выдачи.
+                                                    </div>
+                                                </div>
+                                                <div class="left-block-order__checkbox2 bx-soa-pp-company bx-soa-pp-company-item bx-soa-pp-company--hasprice "
+                                                    data-id="9">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_DELIVERY_ID_9" name="DELIVERY_ID" type="checkbox"
+                                                            class="bx-soa-pp-company-checkbox" value="9">
+                                                    </div>
+                                                    <div class="left-block-order__smalltitles">
+                                                        <div class="left-block-order__smalltitle2 bx-soa-pp-company-smalltitle"
+                                                            lang="ru">
+                                                            Доставка до
+                                                            транспортной компании ПЭК
+                                                        </div>
+                                                        <div class="left-block-order__cost bx-soa-pp-delivery-cost">
+                                                            <div class="left-block-order__name bx-soa-pp-list-termin"
+                                                                lang="ru">Стоимость:</div>
+                                                            <div class="left-block-order__price bx-soa-pp-list-description"
+                                                                lang="ru">500 ₽</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix hidden"></div>
+                                                    <div class="left-block-order__descr bx-soa-pp-company-description">
+                                                        Стоимость доставки
+                                                        транспортной компанией оплачивается отдельно, при получении
+                                                        заказа в пункте выдачи.</div>
+                                                </div>
+                                                <div class="left-block-order__checkbox2 bx-soa-pp-company bx-soa-pp-company-item bx-soa-pp-company--hasprice "
+                                                    data-id="11">
+                                                    <div class="bx-soa-pp-company-graf-container"><input
+                                                            id="ID_DELIVERY_ID_11" name="DELIVERY_ID" type="checkbox"
+                                                            class="bx-soa-pp-company-checkbox" value="11"></div>
+                                                    <div class="left-block-order__smalltitles">
+                                                        <div class="left-block-order__smailltitle2 bx-soa-pp-company-smalltitle"
+                                                            lang="ru">Доставка до
+                                                            транспортной компании СДЭК</div>
+                                                        <div class="left-block-order__cost bx-soa-pp-delivery-cost">
+                                                            <div class="left-block-order__name bx-soa-pp-list-termin"
+                                                                lang="ru">Стоимость:</div>
+                                                            <div class="left-block-order__price bx-soa-pp-list-description"
+                                                                lang="ru">0 р.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix">
+                                                        <div class="col-sm-5 bx-soa-pp-desc-container">
+                                                            <div class="bx-soa-pp-company">
+                                                                <div class="bx-soa-pp-company-block">
+                                                                    <div class="bx-soa-pp-company-desc"></div>
+                                                                </div>
+                                                                <div style="clear: both;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="left-block-order__descr bx-soa-pp-company-description">
+                                                        Стоимость доставки
+                                                        транспортной компанией оплачивается отдельно, при получении
+                                                        заказа в пункте выдачи.</div>
+                                                </div>
+                                                <div class="left-block-order__checkbox2 bx-soa-pp-company bx-soa-pp-company-item bx-soa-pp-company--hasprice"
+                                                    data-id="11">
+                                                    <div class="bx-soa-pp-company-graf-container"><input
+                                                            id="ID_DELIVERY_ID_11" name="DELIVERY_ID" type="checkbox"
+                                                            class="bx-soa-pp-company-checkbox" value="11"></div>
+                                                    <div class="left-block-order__smalltitles">
+                                                        <div class="left-block-order__smalltitle2 bx-soa-pp-company-smalltitle"
+                                                            lang="ru">Самовывоз</div>
+                                                        <div class="left-block-order__cost bx-soa-pp-delivery-cost">
+                                                            <div class="left-block-order__name bx-soa-pp-list-termin"
+                                                                lang="ru">Стоимость:</div>
+                                                            <div class="left-block-order__price bx-soa-pp-list-description"
+                                                                lang="ru">
+                                                                0 р.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix">
+                                                        <div class="col-sm-5 bx-soa-pp-desc-container">
+                                                            <div class="bx-soa-pp-company">
+                                                                <div class="bx-soa-pp-company-block">
+                                                                    <div class="bx-soa-pp-company-desc"></div>
+                                                                </div>
+                                                                <div style="clear: both;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="left-block-order__descr bx-soa-pp-company-description">
+                                                        Вы можете самостоятельно забрать заказ
+                                                        из нашего склада.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="bx-soa-paysystem" data-visited="true"
+                                    class="left-block-order__column bx-soa-section bx-active order__item bx-step-completed">
+                                    <h2 class="left-block-order__title order__title">
+                                        Способ оплаты
+                                    </h2>
+                                    <div class="paysystem-block-order bx-soa-section-content">
+                                        <div class="alert alert-danger" style="display: none;"></div>
+                                        <div class="paysystem-block-order__body bx-soa-pp row">
+                                            <div class="left-block-order__checkboxes shipping__item">
+                                                <div class="left-block-order__checkbox bx-soa-pp-company bx-soa-pp-company-item bx-selected"
+                                                    data-id="1">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_PAY_SYSTEM_ID_1" name="PAY_SYSTEM_ID"
+                                                            type="checkbox" class="bx-soa-pp-company-checkbox"
+                                                            value="1">
+                                                    </div>
+                                                    <div class="left-block-order__smalltitle bx-soa-pp-company-smalltitle"
+                                                        lang="ru">
+                                                        Наличные курьеру
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix">
+                                                        <div class="col-sm-5 bx-soa-pp-desc-container">
+                                                            <div class="bx-soa-pp-company"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="left-block-order__checkbox bx-soa-pp-company bx-soa-pp-company-item"
+                                                    data-id="7">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_PAY_SYSTEM_ID_7" name="PAY_SYSTEM_ID"
+                                                            type="checkbox" class="bx-soa-pp-company-checkbox"
+                                                            value="7">
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-smalltitle" lang="ru">
+                                                        ROBOKASSA
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix hidden"></div>
+                                                </div>
+                                                <div class="left-block-order__checkbox bx-soa-pp-company bx-soa-pp-company-item"
+                                                    data-id="9">
+                                                    <div class="bx-soa-pp-company-graf-container"><input
+                                                            id="ID_PAY_SYSTEM_ID_9" name="PAY_SYSTEM_ID" type="checkbox"
+                                                            class="bx-soa-pp-company-checkbox" value="9"></div>
+                                                    <div class="bx-soa-pp-company-smalltitle" lang="ru">
+                                                        Рассрочки от Тинькофф
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-inject clearfix hidden"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="paysystem-block-order__descr col-sm-12 bx-soa-pp-company-description">
+                                                Оплата производится наличными деньгами в момент получения заказа.
+                                                Подтверждением вашей оплаты является фискальный кассовый чек,
+                                                вручаемый во время получения и оплаты заказа.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="bx-soa-properties" data-visited="true"
+                                    class="left-block-order__column bx-soa-section bx-active order__item bx-step-completed">
+                                    <h2 class="left-block-order__title order__title">
+                                        Личные данные получателя
+                                    </h2>
+                                    <div class="left-block-order__forms bx-soa-section-content container-fluid">
+                                        <div class="alert alert-danger" style="display: none;"></div>
+                                        <div class="row">
+                                            <div class="left-block-order__inputs col-sm-12 bx-soa-customer">
+                                                <div class="left-block-order__input form-group bx-soa-customer-field"
+                                                    data-property-id-row="1">
+                                                    <label for="soa-property-1"
+                                                        class="left-block-order__label bx-soa-custom-label">
+                                                        ФИО
+                                                    </label>
+                                                    <div class="soa-property-container">
+                                                        <input data-required type="text" size="40" name="ORDER_PROP_1"
+                                                            id="soa-property-1" autocomplete="name" placeholder="ФИО"
+                                                            class="form-control bx-soa-customer-input bx-ios-fix">
+                                                    </div>
+                                                </div>
+                                                <div class="left-block-order__input form-group bx-soa-customer-field"
+                                                    data-property-id-row="3">
+                                                    <label for="soa-property-3"
+                                                        class="left-block-order__label bx-soa-custom-label">Телефон</label>
+                                                    <div class="soa-property-container">
+                                                        <input type="text" size="30" name="ORDER_PROP_3"
+                                                            id="soa-property-3" autocomplete="tel" placeholder="Телефон"
+                                                            class="form-control bx-soa-customer-input bx-ios-fix">
+                                                    </div>
+                                                </div>
+                                                <div class="left-block-order__input form-group bx-soa-customer-field"
+                                                    data-property-id-row="2">
+                                                    <label for="soa-property-2"
+                                                        class="left-block-order__label bx-soa-custom-label">E-mail</label>
+                                                    <div class="soa-property-container">
+                                                        <input data-required type="text" size="40" name="ORDER_PROP_2"
+                                                            id="soa-property-2" autocomplete="email"
+                                                            placeholder="E-mail"
+                                                            class="form-control bx-soa-customer-input bx-ios-fix">
+                                                    </div>
+                                                </div>
+                                                <div class="left-block-order__input form-group bx-soa-customer-field">
+                                                    <label for="orderDescription"
+                                                        class="left-block-order__label bx-soa-customer-label">Комментарии
+                                                        к заказу:</label>
+                                                    <textarea id="orderDescription" cols="4"
+                                                        class="form-control bx-soa-customer-textarea bx-ios-fix"
+                                                        name="ORDER_DESCRIPTION"
+                                                        placeholder="Комментарии к заказу"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="bx-soa-total" class="right-block-order bx-soa-sidebar order__sidebar">
+                                <div class="bx-soa-cart-total-ghost" style="padding-top: 0px;"></div>
+                                <div class="right-block-order__sticky bx-soa-cart-total order__sidebar-block">
+                                    <div class="right-block-order__top">
+                                        <div class="right-block-order__title">Ваш заказ</div>
+                                        <a href="#">Изменить</a>
+                                    </div>
+                                    <div class="right-block-order__center">
+                                        <div class="right-block-order__line bx-soa-cart-total-line">
+                                            <span class="right-block-order__name bx-soa-cart-t">Сумма заказа:</span>
+                                            <span class="right-block-order__value bx-soa-cart-d">9 600 р.</span>
+                                        </div>
+                                        <div class="right-block-order__line bx-soa-cart-total-line">
+                                            <span class="right-block-order__name bx-soa-cart-t">Доставка:</span>
+                                            <span class="right-block-order__value bx-soa-cart-d">500 р.</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="right-block-order__total bx-soa-cart-total-line bx-soa-cart-total-line-total">
+                                        <span class="bx-soa-cart-t">Итого:</span>
+                                        <span class="right-block-order__price bx-soa-cart-d bx-soa-changeCostSign">
+                                            10 100 р.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)" onclick="ym(84115630,'reachGoal','PLACE-ORDER-CLICK')"
+                            style="margin:10px 0" class="btn pull-right btn btn-default btn-lg hidden-xs"
+                            data-save-button="true">
+                            Оформить заказ </a>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer2.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+    {% include 'blocks/popup.njk' %}
+</body>
+
+</html>

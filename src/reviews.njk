@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Отзывы</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Главная
+                                <img src="img/icon/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li><span>Отзывы</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-reviews2 block1">
+                <div class="container">
+                    <div class="heading-complex">
+                        <h2 class="title2">
+                            Отзывы клиентов
+                        </h2>
+                        <div class="heading-complex__arrows">
+                            <div class="block-reviews2__arrow-prev arrow-prev">
+                                <img loading="lazy" src="img/icon/arrow2.svg" alt="">
+                            </div>
+                            <div class="block-reviews2__arrow-next arrow-next">
+                                <img loading="lazy" src="img/icon/arrow2.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-reviews2__body">
+                        <div class="block-reviews2__slider swiper">
+                            <div class="block-reviews2__wrapper swiper-wrapper">
+                                <a href="img/image17.webp" data-fancybox="gallery1"
+                                    class="block-reviews2__slide swiper-slide">
+                                    <img loading="lazy" src="img/image17.webp" alt="">
+                                </a>
+                                <a href="img/image17.webp" data-fancybox="gallery1"
+                                    class="block-reviews2__slide swiper-slide">
+                                    <img loading="lazy" src="img/image17.webp" alt="">
+                                </a>
+                                <a href="img/image17.webp" data-fancybox="gallery1"
+                                    class="block-reviews2__slide swiper-slide">
+                                    <img loading="lazy" src="img/image17.webp" alt="">
+                                </a>
+                                <a href="img/image17.webp" data-fancybox="gallery1"
+                                    class="block-reviews2__slide swiper-slide">
+                                    <img loading="lazy" src="img/image17.webp" alt="">
+                                </a>
+                                <a href="img/image17.webp" data-fancybox="gallery1"
+                                    class="block-reviews2__slide swiper-slide">
+                                    <img loading="lazy" src="img/image17.webp" alt="">
+                                </a>
+                                <a href="img/image17.webp" data-fancybox="gallery1"
+                                    class="block-reviews2__slide swiper-slide">
+                                    <img loading="lazy" src="img/image17.webp" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="block-reviews2__pagination pagination2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block-reviews1 block2">
+                <div class="container">
+                    <h2 class="title2">
+                        Более 300 живых<br>
+                        отзывов на <span>Яндекс Картах</span>
+                    </h2>
+                    <div class="block-reviews1__content">
+                        <div class="block-reviews1__body">
+                            <img loading="lazy" src="img/image18.webp" alt="">
+                        </div>
+                        <div class="block-reviews1__image">
+                            <img loading="lazy" src="img/image5.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer2.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+    {% include 'blocks/popup.njk' %}
+</body>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Товар</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main other">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Главная
+                                <img src="img/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg aria-hidden="true" width="16" height="9">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                                Запчасти
+                                <img src="img/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li><span>Mazda 3</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-product-card2">
+                <div class="container">
+                    <div class="block-product-card2__content">
+                        <div class="filter">
+                            <button class="filter__button">
+                                <span>выбрать категорию</span>
+                                <img src="img/arrow1.svg" alt="">
+                            </button>
+                            <div data-spollers data-one-spoller class="spollers-filter">
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon1.svg" alt="">
+                                        <span>Фильтры</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon13.svg" alt="">
+                                        <span>Двигатель</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon14.svg" alt="">
+                                        <span>Подвеска</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon15.svg" alt="">
+                                        <span>Тормозная система</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon16.svg" alt="">
+                                        <span>Система охлаждения</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon4.svg" alt="">
+                                        <span>Электрика</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon10.svg" alt="">
+                                        <span>Трансмиссия</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon5.svg" alt="">
+                                        <span>Масла и жидкости</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon11.svg" alt="">
+                                        <span>Салон</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon9.svg" alt="">
+                                        <span>Аксессуары</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="spollers-filter__item">
+                                    <button type="button" data-spoller class="spollers-filter__title">
+                                        <img src="img/icon/icon6.svg" alt="">
+                                        <span>Кузов</span>
+                                    </button>
+                                    <div class="spollers-filter__body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Маслянные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Салонные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Топливные</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Воздушные</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-product-card2__body">
+                            <div class="top-product-card2">
+                                <div class="top-product-card2__image">
+                                    <img src="img/image15.webp" alt="">
+                                </div>
+                                <div class="top-product-card2__body">
+                                    <div class="top-product-card2__articles">
+                                        <div class="top-product-card2__article">
+                                            Арт.: BP4M61190D
+                                        </div>
+                                        <div class="top-product-card2__stock">
+                                            Есть в наличии: <span>1</span>
+                                        </div>
+                                    </div>
+                                    <h1 class="top-product-card2__title">
+                                        Маслянный фильтр
+                                        на Mazda 3
+                                    </h1>
+                                    <div class="top-product-card2__prices">
+                                        <div class="top-product-card2__price">1 200 р.</div>
+                                        <a href="#">Нашли дешевле?</a>
+                                    </div>
+                                    <div class="buttons-product-card2">
+                                        <div class="buttons-product-card2__top">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus"></button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus"></button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <img loading="lazy" src="img/icon/cart.svg" alt="">
+                                                <span>В корзину</span>
+                                            </button>
+                                        </div>
+                                        <a href="#" data-popup="#buy-click"
+                                            class="buttons-product-card2__button-click btn">
+                                            Купить в 1 клик
+                                        </a>
+                                        <a href="#" class="buttons-product-card2__button-installments btn">
+                                            Купить в рассрочку
+                                        </a>
+                                    </div>
+                                    <div class="top-product-card2__present">
+                                        <img loading="lazy" src="img/icon/present.svg" alt="">
+                                        <span>Хочу в подарок</span>
+                                    </div>
+                                    <div class="delivery-product-card2">
+                                        <div class="delivery-product-card2__column">
+                                            <div class="delivery-product-card2__name">Самовывоз – 0 р.</div>
+                                            <div class="delivery-product-card2__value">Сегодня</div>
+                                        </div>
+                                        <div class="delivery-product-card2__column">
+                                            <div class="delivery-product-card2__name">Курьерская доставка – 390 р.</div>
+                                            <div class="delivery-product-card2__value">Завтра</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-product-card2__bottom">
+                                <div data-tabs class="tabs">
+                                    <nav data-tabs-titles class="tabs__navigation">
+                                        <button type="button" class="tabs__title _tab-active">Характеристики</button>
+                                        <button type="button" class="tabs__title">Наличие</button>
+                                        <button type="button" class="tabs__title">Отзывы</button>
+                                    </nav>
+                                    <div data-tabs-body class="tabs__content">
+                                        <div class="tabs__body">
+                                            <ul>
+                                                <li>
+                                                    <div class="tabs__name">Производитель:</div>
+                                                    <div class="tabs__value">FLEST</div>
+                                                </li>
+                                                <li>
+                                                    <div class="tabs__name">Состояние:</div>
+                                                    <div class="tabs__value">Новое</div>
+                                                </li>
+                                                <li>
+                                                    <div class="tabs__name">Исполнение:</div>
+                                                    <div class="tabs__value">Накручиваемый</div>
+                                                </li>
+                                                <li>
+                                                    <div class="tabs__name">Дополнительно:</div>
+                                                    <div class="tabs__value">С перепускным клапаном</div>
+                                                </li>
+                                                <li>
+                                                    <div class="tabs__name">Гарантия:</div>
+                                                    <div class="tabs__value">6 мес. или 20 тыс. км</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tabs__body">
+                                            Содержимое второго таба
+                                        </div>
+                                        <div class="tabs__body">
+                                            Содержимое третьего таба
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer2.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+    {% include 'blocks/popup.njk' %}
+    <div id="buy-click" aria-hidden="true" class="popup">
+        <div class="popup__wrapper">
+            <div class="popup__content">
+                <div data-close class="popup__close">
+                    <img loading="lazy" src="img/icon/close.svg" alt="">
+                </div>
+                <div class="popup__body">
+                    <div class="popup__title">
+                        Купить в 1 клик
+                    </div>
+                    <form action="#" class="form">
+                        <div class="form__inputs">
+                            <div class="form__input">
+                                <label for="fio">ФИО</label>
+                                <input id="fio" autocomplete="off" type="text" name="form[]" placeholder="ФИО">
+                            </div>
+                            <div class="form__input">
+                                <label for="tel">Телефон</label>
+                                <input id="tel" data-required autocomplete="off" type="text" name="form[]"
+                                    placeholder="Телефон">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">
+                            Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

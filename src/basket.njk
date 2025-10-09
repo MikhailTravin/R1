@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Корзина</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main other">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg aria-hidden="true" width="16" height="9">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                                Главная
+                                <img src="img/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li><span>Корзина</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-basket">
+                <div class="container">
+                    <h1 class="title2">Корзина</h1>
+                    <div id="basket-root"
+                        class="block-basket__content bx-basket cart-page-block bx-blue bx-step-opacity">
+                        <div class="top-block-basket">
+                            <div class="header-row">
+                                <div class="header-cell header-cell__photo">Фото</div>
+                                <div class="header-cell header-cell__title">Наименование</div>
+                                <div class="header-cell header-cell__price">Цена за шт.</div>
+                                <div class="header-cell header-cell__quantity">Количество</div>
+                                <div class="header-cell header-cell__amount">Сумма</div>
+                                <div class="header-cell header-cell__remove"></div>
+                            </div>
+                            <div class="basket-items-list-container" id="basket-items-list-container">
+                                <div class="basket-items-list-overlay" id="basket-items-list-overlay"
+                                    style="display: none;"></div>
+                                <div class="basket-items-list" id="basket-item-list">
+                                    <div class="basket-search-not-found" id="basket-item-list-empty-result"
+                                        style="display: none;">
+                                        <div class="basket-search-not-found-icon"></div>
+                                        <div class="basket-search-not-found-text">
+                                            По данному запросу товаров не найдено </div>
+                                    </div>
+                                    <table class="basket-items-list-table" id="basket-item-table">
+                                        <div class="body-row basket-items-list-item-container" id="basket-item-15580"
+                                            data-entity="basket-item" data-id="15580">
+                                            <div class="body-cell body-cell__photo">
+                                                <img loading="lazy" src="img/image15.webp" alt="">
+                                            </div>
+                                            <div class="body-cell body-cell__title">
+                                                <a href="#">
+                                                    <span data-entity="basket-item-name">
+                                                        Маслянный фильтр
+                                                        на Mazda 3
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="body-cell body-cell__price">
+                                                <div class="basket-item-block-price">
+                                                    <div class="basket-item-price-current">
+                                                        <span class="basket-item-price-current-text"
+                                                            id="basket-item-price-15580">
+                                                            1 200 р.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__quantity">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus"></button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus"></button>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__amount">
+                                                <div class="basket-item-price-current">
+                                                    <span class="basket-item-price-current-text"
+                                                        id="basket-item-sum-price-15580">
+                                                        2 400 р.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__remove">
+                                                <span class="basket-item-actions-remove"
+                                                    data-entity="basket-item-delete">
+                                                    <img loading="lazy" src="img/icon/close.svg" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="body-row basket-items-list-item-container" id="basket-item-15580"
+                                            data-entity="basket-item" data-id="15580">
+                                            <div class="body-cell body-cell__photo">
+                                                <img loading="lazy" src="img/image15.webp" alt="">
+                                            </div>
+                                            <div class="body-cell body-cell__title">
+                                                <a href="#">
+                                                    <span data-entity="basket-item-name">
+                                                        Маслянный фильтр
+                                                        на Mazda 3
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="body-cell body-cell__price">
+                                                <div class="basket-item-block-price">
+                                                    <div class="basket-item-price-current">
+                                                        <span class="basket-item-price-current-text"
+                                                            id="basket-item-price-15580">
+                                                            1 200 р.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__quantity">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus"></button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus"></button>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__amount">
+                                                <div class="basket-item-price-current">
+                                                    <span class="basket-item-price-current-text"
+                                                        id="basket-item-sum-price-15580">
+                                                        2 400 р.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__remove">
+                                                <span class="basket-item-actions-remove"
+                                                    data-entity="basket-item-delete">
+                                                    <img loading="lazy" src="img/icon/close.svg" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="body-row basket-items-list-item-container" id="basket-item-15580"
+                                            data-entity="basket-item" data-id="15580">
+                                            <div class="body-cell body-cell__photo">
+                                                <img loading="lazy" src="img/image15.webp" alt="">
+                                            </div>
+                                            <div class="body-cell body-cell__title">
+                                                <a href="#">
+                                                    <span data-entity="basket-item-name">
+                                                        Маслянный фильтр
+                                                        на Mazda 3
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="body-cell body-cell__price">
+                                                <div class="basket-item-block-price">
+                                                    <div class="basket-item-price-current">
+                                                        <span class="basket-item-price-current-text"
+                                                            id="basket-item-price-15580">
+                                                            1 200 р.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__quantity">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus"></button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus"></button>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__amount">
+                                                <div class="basket-item-price-current">
+                                                    <span class="basket-item-price-current-text"
+                                                        id="basket-item-sum-price-15580">
+                                                        2 400 р.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__remove">
+                                                <span class="basket-item-actions-remove"
+                                                    data-entity="basket-item-delete">
+                                                    <img loading="lazy" src="img/icon/close.svg" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="body-row basket-items-list-item-container" id="basket-item-15580"
+                                            data-entity="basket-item" data-id="15580">
+                                            <div class="body-cell body-cell__photo">
+                                                <img loading="lazy" src="img/image15.webp" alt="">
+                                            </div>
+                                            <div class="body-cell body-cell__title">
+                                                <a href="#">
+                                                    <span data-entity="basket-item-name">
+                                                        Маслянный фильтр
+                                                        на Mazda 3
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="body-cell body-cell__price">
+                                                <div class="basket-item-block-price">
+                                                    <div class="basket-item-price-current">
+                                                        <span class="basket-item-price-current-text"
+                                                            id="basket-item-price-15580">
+                                                            1 200 р.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__quantity">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus"></button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus"></button>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__amount">
+                                                <div class="basket-item-price-current">
+                                                    <span class="basket-item-price-current-text"
+                                                        id="basket-item-sum-price-15580">
+                                                        2 400 р.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="body-cell body-cell__remove">
+                                                <span class="basket-item-actions-remove"
+                                                    data-entity="basket-item-delete">
+                                                    <img loading="lazy" src="img/icon/close.svg" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block-basket" data-entity="basket-total-block">
+                            <div class="bottom-block-basket__total">
+                                <span>Итого:</span>
+                                <div class="bottom-block-basket__price" data-entity="basket-total-price">
+                                    9 600 р.
+                                </div>
+                            </div>
+                            <div class="bottom-block-basket__buttons">
+                                <a data-popup="#buy-click" href="#" class="bottom-block-basket__button-click btn">Купить
+                                    в 1 клик</a>
+                                <a href="#" class="btn basket-btn-checkout" data-entity="basket-checkout-button">Перейти
+                                    к оформлению</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer2.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+    {% include 'blocks/popup.njk' %}
+    <div id="buy-click" aria-hidden="true" class="popup">
+        <div class="popup__wrapper">
+            <div class="popup__content">
+                <div data-close class="popup__close">
+                    <img loading="lazy" src="img/icon/close.svg" alt="">
+                </div>
+                <div class="popup__body">
+                    <div class="popup__title">
+                        Купить в 1 клик
+                    </div>
+                    <form action="#" class="form">
+                        <div class="form__inputs">
+                            <div class="form__input">
+                                <label for="fio">ФИО</label>
+                                <input id="fio" autocomplete="off" type="text" name="form[]" placeholder="ФИО">
+                            </div>
+                            <div class="form__input">
+                                <label for="tel">Телефон</label>
+                                <input id="tel" data-required autocomplete="off" type="text" name="form[]"
+                                    placeholder="Телефон">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">
+                            Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Спасибо</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main other">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg aria-hidden="true" width="16" height="9">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                                Главная
+                                <img src="img/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li><span>Оформление заказа</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-thanks">
+                <div class="container">
+                    <div class="block-thanks__content">
+                        <div class="block-thanks__icon">
+                            <img loading="lazy" src="img/icon/check.svg" alt="">
+                        </div>
+                        <div class="block-thanks__titles">
+                            <h2 class="title2">
+                                Благодарим за заказ!
+                            </h2>
+                            <p>
+                                Ваш заказ принят, в ближайшее время с Вами свяжется
+                                наш менеджер для подтверждения заказа, будьте на связи!
+                            </p>
+                        </div>
+                        <a href="#" class="btn">Хорошо</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer2.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+    {% include 'blocks/popup.njk' %}
+</body>
+
+</html>

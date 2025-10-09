@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Контакты</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main main-bg">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Главная
+                                <img src="img/icon/arrow1.svg" alt="">
+                            </a>
+                        </li>
+                        <li><span>Контакты</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-contacts block1">
+                <div class="container">
+                    <div class="heading-complex">
+                        <h1 class="title2">
+                            Контакты
+                        </h1>
+                    </div>
+                    <div class="block-contacts__content">
+                        <div class="block-contacts__column">
+                            <div class="block-contacts__left">
+                                <div class="block-contacts__title">
+                                    Автомагазин и техцентр
+                                    <span>Мелитопольская</span>
+                                </div>
+                                <img loading="lazy" src="img/image25.webp" alt="">
+                                <ul>
+                                    <li>
+                                        <div class="block-contacts__name">Адрес:</div>
+                                        <div class="block-contacts__value">Москва, Мелитопольская д. 1 стр. 2</div>
+                                    </li>
+                                    <li>
+                                        <div class="block-contacts__name">Время работы:</div>
+                                        <div class="block-contacts__value">Ежедневно с 9:00 до 21:00</div>
+                                    </li>
+                                    <li>
+                                        <div class="block-contacts__name">СТО и склад:</div>
+                                        <a href="tel:74992900491" class="block-contacts__value">+7 (499) 290-04-91</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="btn">записаться</a>
+                            </div>
+                            <div id="map1" class="block-contacts__map"></div>
+                        </div>
+                        <div class="block-contacts__column">
+                            <div class="block-contacts__left">
+                                <div class="block-contacts__title">
+                                    Автомагазин и техцентр
+                                    <span>Тюменский</span>
+                                </div>
+                                <img loading="lazy" src="img/image26.webp" alt="">
+                                <ul>
+                                    <li>
+                                        <div class="block-contacts__name">Адрес:</div>
+                                        <div class="block-contacts__value">Москва, Тюменский проезд 5 стр. 1</div>
+                                    </li>
+                                    <li>
+                                        <div class="block-contacts__name">Время работы:</div>
+                                        <div class="block-contacts__value">Ежедневно с 9:00 до 21:00</div>
+                                    </li>
+                                    <li>
+                                        <div class="block-contacts__name">СТО и склад:</div>
+                                        <a href="tel:74994605572" class="block-contacts__value">+ 7 (499) 460-55-72</a>
+                                    </li>
+                                    <li>
+                                        <div class="block-contacts__name">Шиномонтаж:</div>
+                                        <a href="tel:74994951911" class="block-contacts__value">+7 (499) 495-19-11</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="btn">записаться</a>
+                            </div>
+                            <div id="map2" class="block-contacts__map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer2.njk' %}
+    </div>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&amp;lang=ru_RU&amp;_v=20240623012845"></script>
+    {% include 'blocks/scripts.njk' %}
+    {% include 'blocks/popup.njk' %}
+</body>
+
+</html>

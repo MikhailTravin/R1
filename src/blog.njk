@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Блог</title>
+	{% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+	<div class="main-wrapper-outer">
+		{% include 'blocks/header.njk' %}
+		<main class="main main-bg">
+
+			<div class="breadcrumbs">
+				<div class="container">
+					<ul>
+						<li>
+							<a href="#">
+								Главная
+								<img src="img/icon/arrow1.svg" alt="">
+							</a>
+						</li>
+						<li><span>Блог</span></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="block-blog block1">
+				<div class="container">
+					<h2 class="title2">
+						Полезные статьи
+					</h2>
+					<div class="block-blog__search">
+						<div class="search">
+							<div class="search__content">
+								<div class="search__input">
+									<img src="img/icon/search.svg" alt="">
+									<input autocomplete="off" type="text" name="form[]"
+										placeholder="Как диагностировать АКПП">
+								</div>
+
+							</div>
+							<button type="button" class="btn">найти</button>
+							<div class="dropdowm-search">
+								<div data-simplebar class="dropdowm-search__simplebar">
+									<ul>
+										<li>
+											<a href="#">
+												<div class="dropdowm-search__image">
+													<img loading="lazy" src="img/image15.webp" alt="">
+												</div>
+												<div class="dropdowm-search__title">
+													Маслянный <span>фильтр</span>
+													<br>
+													на Mazda 3
+												</div>
+												<div class="dropdowm-search__price">
+													1 200 р.
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="dropdowm-search__image">
+													<img loading="lazy" src="img/image15.webp" alt="">
+												</div>
+												<div class="dropdowm-search__title">
+													Маслянный <span>фильтр</span>
+													<br>
+													на Mazda 3
+												</div>
+												<div class="dropdowm-search__price">
+													1 200 р.
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="dropdowm-search__image">
+													<img loading="lazy" src="img/image15.webp" alt="">
+												</div>
+												<div class="dropdowm-search__title">
+													Маслянный <span>фильтр</span>
+													<br>
+													на Mazda 3
+												</div>
+												<div class="dropdowm-search__price">
+													1 200 р.
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="dropdowm-search__image">
+													<img loading="lazy" src="img/image15.webp" alt="">
+												</div>
+												<div class="dropdowm-search__title">
+													Маслянный <span>фильтр</span>
+													<br>
+													на Mazda 3
+												</div>
+												<div class="dropdowm-search__price">
+													1 200 р.
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="dropdowm-search__image">
+													<img loading="lazy" src="img/image15.webp" alt="">
+												</div>
+												<div class="dropdowm-search__title">
+													Маслянный <span>фильтр</span>
+													<br>
+													на Mazda 3
+												</div>
+												<div class="dropdowm-search__price">
+													1 200 р.
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="dropdowm-search__image">
+													<img loading="lazy" src="img/image15.webp" alt="">
+												</div>
+												<div class="dropdowm-search__title">
+													Маслянный <span>фильтр</span>
+													<br>
+													на Mazda 3
+												</div>
+												<div class="dropdowm-search__price">
+													1 200 р.
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<a href="#" class="btn">Все результаты</a>
+							</div>
+						</div>
+					</div>
+					<div class="filter-navigation">
+						<button data-filter="all" type="button" class="filter-navigation__title _active">все</button>
+						<button data-filter="filter1" type="button" class="filter-navigation__title">ходовая
+							часть</button>
+						<button data-filter="filter2" type="button" class="filter-navigation__title">кузов</button>
+						<button data-filter="filter3" type="button" class="filter-navigation__title">тормозная
+							система</button>
+						<button data-filter="filter4" type="button" class="filter-navigation__title">двигатель</button>
+						<button data-filter="filter5" type="button" class="filter-navigation__title">рулевое
+							управление</button>
+						<button data-filter="filter6" type="button" class="filter-navigation__title">Шиномонтаж</button>
+						<button data-filter="filter7" type="button" class="filter-navigation__title">электрика</button>
+						<button data-filter="filter8" type="button" class="filter-navigation__title">система
+							охлаждения</button>
+						<button data-filter="filter9" type="button" class="filter-navigation__title">выхлопная
+							система</button>
+						<button data-filter="filter10" type="button"
+							class="filter-navigation__title">диагностика</button>
+						<a href="#" class="filter-navigation__link"><span>все категории</span></a>
+					</div>
+					<div class="block-blog__body">
+						<a href="#" data-filter="filter1" class="cart-article">
+							<img loading="lazy" src="img/image2.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">ходовая часть</div>
+								<div class="cart-article__title">
+									Почему тормоза пищат
+									и скрипят: находим причину
+									и решаем проблему
+								</div>
+								<div class="cart-article__data">08 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter2" class="cart-article">
+							<img loading="lazy" src="img/image3.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">кузов</div>
+								<div class="cart-article__title">
+									Самые бережные способы очистки и полировки кузова
+									самостоятельно без сервиса
+								</div>
+								<div class="cart-article__data">10 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter3" class="cart-article">
+							<img loading="lazy" src="img/image4.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">двигатель</div>
+								<div class="cart-article__title">
+									Ремонт двигателя автомобиля: основные понятия и процесс
+								</div>
+								<div class="cart-article__data">13 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter4" class="cart-article">
+							<img loading="lazy" src="img/image2.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">ходовая часть</div>
+								<div class="cart-article__title">
+									Почему тормоза пищат
+									и скрипят: находим причину
+									и решаем проблему
+								</div>
+								<div class="cart-article__data">08 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter5" class="cart-article">
+							<img loading="lazy" src="img/image3.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">кузов</div>
+								<div class="cart-article__title">
+									Самые бережные способы очистки и полировки кузова
+									самостоятельно без сервиса
+								</div>
+								<div class="cart-article__data">10 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter6" class="cart-article">
+							<img loading="lazy" src="img/image4.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">двигатель</div>
+								<div class="cart-article__title">
+									Ремонт двигателя автомобиля: основные понятия и процесс
+								</div>
+								<div class="cart-article__data">13 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter7" class="cart-article">
+							<img loading="lazy" src="img/image2.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">ходовая часть</div>
+								<div class="cart-article__title">
+									Почему тормоза пищат
+									и скрипят: находим причину
+									и решаем проблему
+								</div>
+								<div class="cart-article__data">08 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter8" class="cart-article">
+							<img loading="lazy" src="img/image3.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">кузов</div>
+								<div class="cart-article__title">
+									Самые бережные способы очистки и полировки кузова
+									самостоятельно без сервиса
+								</div>
+								<div class="cart-article__data">10 сентября, 2025 г.</div>
+							</div>
+						</a>
+						<a href="#" data-filter="filter9" class="cart-article">
+							<img loading="lazy" src="img/image4.webp" alt="">
+							<div class="cart-article__item">
+								<div class="cart-article__name">двигатель</div>
+								<div class="cart-article__title">
+									Ремонт двигателя автомобиля: основные понятия и процесс
+								</div>
+								<div class="cart-article__data">13 сентября, 2025 г.</div>
+							</div>
+						</a>
+					</div>
+					{% include 'blocks/pagination-controls.njk' %}
+				</div>
+			</div>
+
+		</main>
+		{% include 'blocks/footer2.njk' %}
+	</div>
+	{% include 'blocks/scripts.njk' %}
+	{% include 'blocks/popup.njk' %}
+</body>
+
+</html>

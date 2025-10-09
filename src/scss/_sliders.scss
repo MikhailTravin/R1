@@ -1,0 +1,188 @@
+.pagination {
+    position: absolute;
+    z-index: 30;
+    top: auto !important;
+    bottom: 55px !important;
+    right: 0;
+    left: auto !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: auto !important;
+    @media (max-width: 768px) {
+        left: 15px !important;
+        bottom: 15px !important;
+    }
+    .swiper-pagination-bullet {
+        margin: 0px 0px 0px 0px !important;
+        width: 37px;
+        height: 19px;
+        opacity: 1;
+        position: relative;
+        background-color: transparent;
+        @media (max-width: 768px) {
+            width: 31px;
+            height: 17px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 9px;
+            height: 9px;
+            flex: 0 0 9px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            @media (max-width: 768px) {
+                width: 7px;
+                height: 7px;
+                flex: 0 0 7px;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translate(0px, -50%);
+            left: 0;
+            width: 37px;
+            height: 19px;
+            background-image: url("../img/icon/pagination.svg");
+            background-size: 100% 100%;
+            opacity: 0;
+            transition: opacity 0.3s;
+            @media (max-width: 768px) {
+                width: 31px;
+                height: 17px;
+            }
+        }
+    }
+    .swiper-pagination-bullet-active {
+        &::before {
+            content: "";
+            opacity: 1;
+        }
+    }
+}
+
+.pagination2 {
+    margin: 48px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    @media (max-width: 768px) {
+        margin: 28px 0px 0px 0px;
+    }
+    .swiper-pagination-bullet {
+        margin: 0px 0px 0px 0px !important;
+        width: 10px;
+        height: 10px;
+        flex: 0 0 10px;
+        opacity: 1 !important;
+        background-color: var(--grey-stroke) !important;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: var(--accent) !important;
+    }
+}
+.certificates-block-service__pagination.pagination2 {
+    .swiper-pagination-bullet {
+        background-color: var(--grey-stroke-2) !important;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: var(--accent) !important;
+    }
+}
+.gallery-block-service__pagination.pagination2 {
+    .swiper-pagination-bullet {
+        background-color: var(--grey-stroke-2) !important;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: var(--accent) !important;
+    }
+}
+
+.arrow-prev {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border: 2px solid var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    img {
+        width: 8px;
+        height: 12px;
+        transform: rotate(-180deg);
+        margin: 0px 2px 0px 0px;
+        filter: invert(44%) sepia(86%) saturate(3316%) hue-rotate(181deg) brightness(92%) contrast(101%);
+    }
+    &:hover {
+        background-color: var(--accent);
+        img {
+            filter: none;
+        }
+    }
+    @media (max-width: 768px) {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+        img {
+            width: 6px;
+            height: 10px;
+        }
+    }
+}
+
+.arrow-next {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border: 2px solid var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    img {
+        width: 8px;
+        height: 12px;
+        margin: 0px 0px 0px 2px;
+        filter: invert(44%) sepia(86%) saturate(3316%) hue-rotate(181deg) brightness(92%) contrast(101%);
+    }
+    &:hover {
+        background-color: var(--accent);
+        img {
+            filter: none;
+        }
+    }
+    @media (max-width: 768px) {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+        img {
+            width: 6px;
+            height: 10px;
+        }
+    }
+}
+
+.swiper-button-disabled {
+    border: 2px solid var(--grey-text);
+    pointer-events: none;
+    img {
+        filter: invert(36%) sepia(23%) saturate(22%) hue-rotate(30deg) brightness(97%) contrast(92%);
+    }
+}
+.swiper-button-lock {
+    display: none;
+}
+.swiper-pagination-lock {
+    display: none;
+}
