@@ -289,6 +289,7 @@ body::after {
     .form__top {
         gap: 18px;
         margin: 0px 0px 33px 0px;
+        align-items: start;
         @media (max-width: 768px) {
             margin: 0px 0px 40px 0px;
             gap: 15px;
@@ -297,6 +298,7 @@ body::after {
             font-weight: 700;
             font-size: 26px;
             line-height: 123%;
+            text-align: left;
         }
         span {
             color: var(--white);
@@ -332,6 +334,7 @@ body::after {
         }
     }
     .form__center {
+        grid-template-columns: 1fr;
         width: 100%;
         gap: 30px;
         margin: 0px 0px 23px 0px;
@@ -384,6 +387,100 @@ body::after {
         padding: 58px 45px 67px 45px;
         @media (max-width: 768px) {
             padding: 103px 15px;
+        }
+        .b24-form-header {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            text-align: left;
+            padding: 0px 0px 0px 0px;
+            border-bottom: none;
+            align-items: start;
+            margin: 0px 0px 33px 0px;
+            @media (max-width: 768px) {
+                margin: 0px 0px 40px 0px;
+                gap: 15px;
+            }
+        }
+        .b24-form-header-description {
+            margin: 0px 0px 0px 0px;
+            opacity: 1;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            color: var(--white);
+            background: var(--black);
+            @media (max-width: 768px) {
+                font-size: 12px;
+                padding: 1px 6px;
+            }
+        }
+        .b24-form-field-agreement {
+            @media (max-width: 992px) {
+                margin: 0px 0px 20px 0px !important;
+            }
+            input {
+                display: none;
+            }
+        }
+        .b24-form-control-desc {
+            opacity: 1 !important;
+        }
+        .b24-form-btn {
+            width: 251px;
+            min-height: 52px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--white);
+            padding: 5px 10px;
+            background-color: var(--accent);
+            border-radius: 100px;
+        }
+        .b24-form-field-agreement-link {
+            font-weight: 400 !important;
+            font-size: 13px !important;
+            line-height: 169% !important;
+        }
+        .b24-form-padding-side {
+            padding: 0px 0px 0px 0px;
+        }
+        .b24-form-control {
+            background: transparent !important;
+            border-bottom: 1px solid rgba(21, 22, 23, 0.2) !important;
+            border-radius: 0px !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-top: none !important;
+            height: 42px !important;
+            padding: 0px 18px 13px 18px !important;
+            width: 100% !important;
+            font-weight: 400 !important;
+            line-height: 100% !important;
+            color: var(--black) !important;
+            font-size: 16px !important;
+        }
+        .b24-form-control-select-label,
+        .b24-form-control:focus + .b24-form-control-label,
+        .b24-form-control-not-empty + .b24-form-control-label {
+            display: none;
+        }
+        .b24-form-field {
+            margin: 0px 0px 30px 0px !important;
+            &:last-child {
+                margin: 0px 0px 23px 0px !important;
+            }
+        }
+        .b24-form-control-container {
+            margin: 0px 0px 0px 0px;
+        }
+        .b24-form-header-title {
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 123%;
+            text-align: left;
+            margin: 0px 0px 0px 0px;
         }
     }
 }

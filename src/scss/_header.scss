@@ -1,5 +1,5 @@
 .header {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -352,15 +352,15 @@
     @media (max-width: 1200px) {
         z-index: 50;
         display: block;
-        position: absolute;
+        position: fixed;
         transition: right 0.3s;
         right: -100%;
         width: 300px;
-        min-height: calc(100vh - 100%);
-        height: calc(100vh - 100%);
+        min-height: calc(100vh - 122px);
+        height: calc(100vh - 122px);
         background-color: var(--white);
         padding: 10px 25px 20px 25px;
-        top: 100%;
+        top: 122px;
         overflow: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -370,6 +370,11 @@
         .menu-open & {
             right: 0;
         }
+    }
+    @media (max-width: 768px) {
+        top: 113px;
+        min-height: calc(100vh - 113px);
+        height: calc(100vh - 113px);
     }
     @media (max-width: 480px) {
         width: 100%;
@@ -491,29 +496,47 @@
             position: absolute;
             top: 100%;
             height: auto;
-            width: 150px;
+            width: 280px;
             padding: 10px 0px 0px 0px;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s;
+            max-height: calc(100vh - 130px);
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
         ul {
             display: flex;
             flex-direction: column;
-            gap: 7px;
             background-color: var(--white);
-            padding: 10px;
             li {
+                display: flex;
+                border-bottom: 1px solid var(--grey-stroke);
+                &:last-child {
+                    border-bottom: none;
+                }
                 a {
-                    font-weight: 500;
+                    font-weight: 400;
                     font-size: 16px;
-                    color: var(--black);
-                    transition: opacity 0.3s;
+                    line-height: 100%;
+                    color: var(--grey-text-2);
+                    transition: color 0.3s;
+                    min-height: 52px;
+                    padding: 5px 20px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
                     &:hover {
-                        opacity: 0.7;
+                        color: var(--accent);
                     }
                     @media (max-width: 1200px) {
                         opacity: 0.8;
+                        padding: 10px;
+                        min-height: auto;
                     }
                     @media (max-width: 768px) {
                         font-size: 14px;
@@ -730,7 +753,7 @@
     &__contacts {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 50px;
         @media (max-width: 768px) {
             gap: 0px;
             margin: 0px 15px 0px 0px;
@@ -795,7 +818,7 @@
     // .bottom-header-other__search
 
     &__search {
-        flex: 0 1 440px;
+        flex: 0 1 480px;
         @media (max-width: 1200px) {
             flex: 1 1 auto;
         }
@@ -812,6 +835,7 @@
         .search__input {
             height: 40px;
             input {
+                font-size: 16px;
                 color: var(--black);
                 padding: 5px 45px 5px 20px;
             }
@@ -1022,7 +1046,9 @@
         }
     }
     .top-header-other .btn {
-        width: 261px;
+        width: auto;
+        padding: 5px 28px;
+        white-space: nowrap;
         svg {
             display: none;
             fill: #fff;
@@ -1063,7 +1089,7 @@
         }
     }
     .menu__list {
-        gap: 24px;
+        gap: 36px;
         @media (max-width: 1200px) {
             gap: 30px;
         }
