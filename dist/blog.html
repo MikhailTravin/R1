@@ -16,7 +16,7 @@
 
 	<body class="preload mp">
 		<div class="main-wrapper-outer">
-			<header data-lp class="header header-other2">
+			<header class="header header-other2">
 				<div class="top-header-other">
 					<div class="container">
 						<div class="top-header-other__content">
@@ -69,9 +69,9 @@
 										</div>
 									</div>
 									<a href="#" data-popup="#request-call" class="btn btn-border">
-										<span>заказать обратный звонок</span>
+										<span>перезвоните мне</span>
 										<svg aria-hidden="true" width="14" height="14">
-											<use xlink:href="img/sprite.svg#phone"></use>
+											<use xlink:href="img/sprite.svg#phone3"></use>
 										</svg>
 									</a>
 								</div>
@@ -327,7 +327,6 @@
 										<img src="img/icon/search.svg" alt="">
 										<input autocomplete="off" type="text" name="form[]" placeholder="Как диагностировать АКПП">
 									</div>
-
 								</div>
 								<button type="button" class="btn">найти</button>
 								<div class="dropdowm-search">
@@ -826,6 +825,7 @@
 		<script src="js/swiper-10.2.0.min.js"></script>
 		<script src="js/simplebar.min.js"></script>
 		<script src="js/fancybox.umd.js"></script>
+		<script src="js/inputmask.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<div id="request-call" aria-hidden="true" class="popup">
 			<div class="popup__wrapper">
@@ -838,45 +838,43 @@
 					<div class="popup-request-call">
 						<div class="popup-request-call__content">
 							<div class="popup-request-call__image">
-								<img loading="lazy" src="img/image16.webp" alt="">
+								<div class="popup-request-call__pic1">
+									<img loading="lazy" src="img/image2.webp" alt="">
+								</div>
+								<img loading="lazy" src="img/logo15.svg" alt="" class="popup-request-call__pic2">
 							</div>
 							<div class="popup-request-call__body">
 								<form action="#">
 									<div class="form">
 										<div class="form__top">
-											<div class="title2">Оставить заявку на обслуживание</div>
+											<div class="title2">
+												Укажите номер телефона, менеджер перезвонит
+												вам в течение 30 минут
+											</div>
 											<span>
-												устраним любые неисправности
+												ответим на любые вопросы
 											</span>
 										</div>
 										<div class="form__center">
 											<div class="form__input">
-												<select name="form[]" class="select">
-													<option value="1" selected>Модель Mazda</option>
-													<option value="2">Модель Mazda2</option>
-													<option value="3">Модель Mazda3</option>
-													<option value="4">Модель Mazda4</option>
-												</select>
-											</div>
-											<div class="form__input">
+												<input autocomplete="off" type="text" name="form[]" placeholder="Ваше Имя">
 												<svg aria-hidden="true" width="16" height="16">
 													<use xlink:href="img/sprite.svg#user"></use>
 												</svg>
-												<input autocomplete="off" type="text" name="form[]" placeholder="Ваше Имя">
 											</div>
 											<div class="form__input">
+												<input data-required autocomplete="off" type="tel" name="form[]" placeholder="Номер телефона">
 												<svg aria-hidden="true" width="18" height="18">
 													<use xlink:href="img/sprite.svg#phone2"></use>
 												</svg>
-												<input data-required autocomplete="off" type="text" name="form[]" placeholder="Номер телефона">
 											</div>
 										</div>
 										<div class="form__bottom">
+											<button type="submit" class="btn">оставить заявку</button>
 											<p>
 												Нажимая на кнопку “Оставить заявку”, Вы даете согласие
 												на обработку Ваших персональных данных
 											</p>
-											<button type="submit" class="btn">оставить заявку</button>
 										</div>
 									</div>
 								</form>

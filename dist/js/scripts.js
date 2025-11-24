@@ -308,6 +308,46 @@ $(document).ready(function () {
             },
         });
     }
+    if ($('.block-main-article__slider').length > 0) {
+        const blockMainArticle = new Swiper('.block-main-article__slider', {
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1.5,
+            spaceBetween: 15,
+            speed: 400,
+            navigation: {
+                nextEl: '.block-main-article__arrow-next',
+                prevEl: '.block-main-article__arrow-prev',
+            },
+            pagination: {
+                el: '.block-main-article__pagination',
+                clickable: true,
+                type: 'bullets'
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                650: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    }
     const sliderContainers = $('.cart-catalog__slider');
     sliderContainers.each(function (index) {
         const paginationEl = $(this).closest('.cart-catalog').find('.cart-catalog__pagination')[0];
@@ -353,8 +393,29 @@ $(document).ready(function () {
             let showMoreBlocksRegular;
 
             if ($showMoreBlocks.length) {
+                $showMoreBlocks.each(function () {
+                    const $block = $(this);
+                    const showmoreData = $block.data('showmore');
+
+                    if (typeof showmoreData === 'string' && showmoreData.includes(',')) {
+                        const parts = showmoreData.split(',');
+                        if (parts.length === 2) {
+                            const breakpoint = parseInt(parts[0].trim());
+                            const type = parts[1].trim();
+
+                            const itemSelector = '.block-prices__column';
+                            const buttonSelector = '[data-showmore-button]';
+                            const itemsCount = 6;
+
+                            initAdvancedShowMore($block, itemSelector, buttonSelector, itemsCount, breakpoint, type);
+                        }
+                    }
+                });
+
                 showMoreBlocksRegular = $showMoreBlocks.filter(function () {
-                    return !$(this).data('showmore-media');
+                    const showmoreData = $(this).data('showmore');
+                    return !$(this).data('showmore-media') &&
+                        (typeof showmoreData !== 'string' || !showmoreData.includes(','));
                 }).get();
 
                 if (showMoreBlocksRegular.length) initItems(showMoreBlocksRegular);
@@ -373,7 +434,6 @@ $(document).ready(function () {
                 const $showMoreContent = $showMoreBlock.find('[data-showmore-content]').first();
                 const $showMoreButton = $showMoreBlock.find('[data-showmore-button]').first();
 
-                // Сначала сбрасываем высоту для корректного расчета
                 $showMoreContent.css({
                     'height': 'auto',
                     'overflow': 'hidden'
@@ -385,15 +445,12 @@ $(document).ready(function () {
                 if (!matchMedia || matchMedia.matches) {
                     if (hiddenHeight < originalHeight) {
                         if ($showMoreBlock.hasClass('_showmore-active')) {
-                            // Если уже активно - показываем все
                             $showMoreContent.css('height', originalHeight + 'px');
                         } else {
-                            // Если не активно - показываем только часть
                             $showMoreContent.css('height', hiddenHeight + 'px');
                         }
                         $showMoreButton.prop('hidden', false);
                     } else {
-                        // Если все элементы помещаются - скрываем кнопку
                         $showMoreContent.css('height', 'auto');
                         $showMoreButton.prop('hidden', true);
                         $showMoreBlock.removeClass('_showmore-active');
@@ -420,7 +477,6 @@ $(document).ready(function () {
                         const $showMoreItem = $showMoreItems.eq(index);
                         hiddenHeight += $showMoreItem.outerHeight(true);
 
-                        // Учитываем rowGap только между элементами
                         if (index < showMoreTypeValue - 1 && rowGap) {
                             hiddenHeight += rowGap;
                         }
@@ -432,7 +488,6 @@ $(document).ready(function () {
             }
 
             function getOriginalHeight($showMoreContent) {
-                // Временно убираем ограничение высоты для расчета
                 const currentHeight = $showMoreContent.height();
                 $showMoreContent.css('height', 'auto');
                 const originalHeight = $showMoreContent[0].scrollHeight;
@@ -448,6 +503,12 @@ $(document).ready(function () {
                     if ($target.closest('[data-showmore-button]').length) {
                         const $showMoreButton = $target.closest('[data-showmore-button]');
                         const $showMoreBlock = $showMoreButton.closest('[data-showmore]');
+
+                        const showmoreData = $showMoreBlock.data('showmore');
+                        if (typeof showmoreData === 'string' && showmoreData.includes(',')) {
+                            return;
+                        }
+
                         const $showMoreContent = $showMoreBlock.find('[data-showmore-content]');
                         const showMoreSpeed = $showMoreBlock.data('showmore-button') || 500;
                         const hiddenHeight = getHeight($showMoreBlock, $showMoreContent);
@@ -469,6 +530,108 @@ $(document).ready(function () {
                         initItems(showMoreBlocksRegular);
                     }
                 }
+            }
+
+            function initAdvancedShowMore($container, itemSelector, buttonSelector, itemsToShow, breakpoint, type = 'max') {
+                const $content = $container.find('[data-showmore-content]');
+                const $button = $container.find(buttonSelector);
+                const $items = $content.find(itemSelector);
+
+                let clickHandlerAdded = false;
+                let isManualToggle = false;
+
+                function checkItemsCount() {
+                    if ($items.length <= itemsToShow) {
+                        $button.attr('hidden', 'true');
+                        $container.removeClass('_showmore-available');
+                    } else {
+                        $button.removeAttr('hidden');
+                        $container.addClass('_showmore-available');
+                    }
+                }
+
+                function handleShowMoreClick(e) {
+                    e.preventDefault();
+                    isManualToggle = true;
+
+                    const isActive = $button.hasClass('_showmore-active');
+
+                    if (isActive) {
+                        $items.each(function (index) {
+                            if (index >= itemsToShow) {
+                                $(this).slideUp(300);
+                            }
+                        });
+                        $button.removeClass('_showmore-active');
+                        $container.removeClass('_showmore-open');
+                    } else {
+                        $items.each(function (index) {
+                            if (index >= itemsToShow) {
+                                $(this).slideDown(300);
+                            }
+                        });
+                        $button.addClass('_showmore-active');
+                        $container.addClass('_showmore-open');
+                    }
+                }
+
+                function toggleShowMore() {
+                    const windowWidth = $(window).width();
+                    let shouldShowMore = false;
+
+                    if (type === 'max') {
+                        shouldShowMore = windowWidth <= breakpoint;
+                    } else if (type === 'min') {
+                        shouldShowMore = windowWidth >= breakpoint;
+                    }
+
+                    if (isManualToggle && shouldShowMore) {
+                        return;
+                    }
+
+                    if (shouldShowMore) {
+                        if (!$button.hasClass('_showmore-active')) {
+                            $items.each(function (index) {
+                                if (index >= itemsToShow) {
+                                    $(this).hide();
+                                } else {
+                                    $(this).show();
+                                }
+                            });
+                            $container.removeClass('_showmore-open');
+                        } else {
+                            $items.show();
+                            $container.addClass('_showmore-open');
+                        }
+
+                        if (!clickHandlerAdded) {
+                            $button.on('click', handleShowMoreClick);
+                            clickHandlerAdded = true;
+                        }
+
+                        checkItemsCount();
+                    } else {
+                        $items.show();
+                        $button.removeClass('_showmore-active').attr('hidden', 'true');
+                        $container.removeClass('_showmore-open');
+
+                        if (clickHandlerAdded) {
+                            $button.off('click', handleShowMoreClick);
+                            clickHandlerAdded = false;
+                        }
+
+                        isManualToggle = false;
+                    }
+                }
+
+                toggleShowMore();
+                checkItemsCount();
+
+                let resizeTimer;
+                $(window).on('resize', function () {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(toggleShowMore, 250);
+                });
             }
         });
     }
@@ -2489,5 +2652,11 @@ $(document).ready(function () {
 
             switchTabs();
         });
+    }
+
+    //Маска телефона
+    const telephone = document.querySelectorAll('input[type="tel"]');
+    if (telephone) {
+        Inputmask({ "mask": "+7 (999) 999 - 99 - 99" }).mask(telephone);
     }
 });
