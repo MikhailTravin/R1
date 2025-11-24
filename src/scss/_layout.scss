@@ -17,6 +17,12 @@
   &.main-bg {
     background: var(--grey-background);
   }
+  &.main-article {
+    overflow: visible;
+    @media (max-width: 992px) {
+      overflow: hidden;
+    }
+  }
 }
 
 .container {
@@ -25,5 +31,3 @@
   max-width: var(--container-width);
   padding: 0px 15px;
 }
-
-

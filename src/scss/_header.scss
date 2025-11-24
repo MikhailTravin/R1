@@ -513,6 +513,10 @@
             display: flex;
             flex-direction: column;
             background-color: var(--white);
+            border: 1px solid var(--grey-stroke);
+            @media (max-width: 1200px) {
+                border: none;
+            }
             li {
                 display: flex;
                 border-bottom: 1px solid var(--grey-stroke);
@@ -522,7 +526,7 @@
                 a {
                     font-weight: 400;
                     font-size: 16px;
-                    line-height: 100%;
+                    line-height: 120%;
                     color: var(--grey-text-2);
                     transition: color 0.3s;
                     min-height: 52px;
@@ -1058,6 +1062,7 @@
             height: 30px;
             border-radius: 50%;
             background-color: var(--accent);
+            padding: 0px 0px 0px 0px;
             svg {
                 display: block;
             }
