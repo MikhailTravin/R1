@@ -1575,7 +1575,7 @@ $(document).ready(function () {
 
                     $spollerTitles.each((index, spollerTitle) => {
                         const $spollerTitle = $(spollerTitle);
-                        const contentBlock = $spollerTitle.next()[0]; // DOM элемент
+                        const contentBlock = $spollerTitle.next()[0];
 
                         if (hideSpollerBody) {
                             $spollerTitle.removeAttr('tabindex');
@@ -1613,67 +1613,67 @@ $(document).ready(function () {
                 const $spollerTitle = $el.closest('[data-spoller]');
 
                 if ($spollerTitle.length) {
-                    const $spollerItem = $spollerTitle.closest('.spollers__item');
-                    const $spollersBlock = $spollerTitle.closest('[data-spollers]');
-                    const oneSpoller = $spollersBlock.is('[data-one-spoller]');
-                    const spollerSpeed = $spollersBlock.data('spollers-speed') ? parseInt($spollersBlock.data('spollers-speed')) : 500;
+                    const windowWidth = $(window).width();
 
-                    if (!$spollersBlock.find('._slide').length) {
-                        if (oneSpoller && !$spollerTitle.hasClass('_spoller-active')) {
-                            hideSpollersBody($spollersBlock);
-                        }
+                    if (windowWidth <= 1200) {
+                        e.preventDefault();
+                    }
 
-                        $spollerTitle.toggleClass('_spoller-active');
-                        if ($spollerItem.length) $spollerItem.toggleClass('_spoller-active');
+                    if (windowWidth <= 1200) {
+                        const $spollerItem = $spollerTitle.closest('.spollers__item');
+                        const $spollersBlock = $spollerTitle.closest('[data-spollers]');
+                        const oneSpoller = $spollersBlock.is('[data-one-spoller]');
+                        const spollerSpeed = $spollersBlock.data('spollers-speed') ? parseInt($spollersBlock.data('spollers-speed')) : 500;
 
-                        const contentBlock = $spollerTitle.next()[0];
-                        const $contentBlock = $(contentBlock);
+                        if (!$spollersBlock.find('._slide').length) {
+                            if (oneSpoller && !$spollerTitle.hasClass('_spoller-active')) {
+                                hideSpollersBody($spollersBlock);
+                            }
 
-                        $contentBlock.css({
-                            'transition': `height ${spollerSpeed}ms ease`,
-                            'overflow': 'hidden'
-                        });
+                            $spollerTitle.toggleClass('_spoller-active');
+                            if ($spollerItem.length) $spollerItem.toggleClass('_spoller-active');
 
-                        if ($spollerTitle.hasClass('_spoller-active')) {
-                            contentBlock.hidden = false;
+                            const contentBlock = $spollerTitle.next()[0];
+                            const $contentBlock = $(contentBlock);
 
-                            $contentBlock.css('height', '0px');
+                            $contentBlock.css({
+                                'transition': `height ${spollerSpeed}ms ease`,
+                                'overflow': 'hidden'
+                            });
 
-                            const autoHeight = $contentBlock.css('height', 'auto').outerHeight();
+                            if ($spollerTitle.hasClass('_spoller-active')) {
+                                contentBlock.hidden = false;
 
-                            $contentBlock.css('height', '0px');
-
-                            setTimeout(() => {
-                                $contentBlock.css('height', autoHeight + 'px');
-
-                                setTimeout(() => {
-                                    $contentBlock.css({
-                                        'height': 'auto',
-                                        'overflow': 'visible'
-                                    });
-                                    if (typeof initShowMoreInSpoller === 'function') {
-                                        initShowMoreInSpoller(contentBlock);
-                                    }
-                                }, spollerSpeed);
-                            }, 10);
-                        } else {
-                            const startHeight = $contentBlock.outerHeight();
-                            $contentBlock.css('height', startHeight + 'px');
-
-                            setTimeout(() => {
                                 $contentBlock.css('height', '0px');
 
-                                setTimeout(() => {
-                                    contentBlock.hidden = true;
-                                    $contentBlock.css({
-                                        'height': '',
-                                        'overflow': ''
-                                    });
-                                }, spollerSpeed);
-                            }, 10);
-                        }
+                                const autoHeight = $contentBlock.css('height', 'auto').outerHeight();
 
-                        e.preventDefault();
+                                $contentBlock.css('height', '0px');
+
+                                $contentBlock.css('height', autoHeight + 'px');
+
+                                $contentBlock.css({
+                                    'height': 'auto',
+                                    'overflow': 'visible'
+                                });
+                                if (typeof initShowMoreInSpoller === 'function') {
+                                    initShowMoreInSpoller(contentBlock);
+                                }
+                            } else {
+                                const startHeight = $contentBlock.outerHeight();
+                                $contentBlock.css('height', startHeight + 'px');
+
+                                setTimeout(() => {
+                                    $contentBlock.css('height', '0px');
+
+                                        contentBlock.hidden = true;
+                                        $contentBlock.css({
+                                            'height': '',
+                                            'overflow': ''
+                                        });
+                                }, 10);
+                            }
+                        }
                     }
                 }
             }
@@ -1736,10 +1736,16 @@ $(document).ready(function () {
         });
 
         $(document).on('click', function (e) {
-            const isClickInsideHeaderTop = headerTop.length && $(e.target).closest(headerTop).length;
+            const isClickInsideMenu =
+                (headerTop.length && $(e.target).closest(headerTop).length) ||
+                $(e.target).closest('.menu__list').length ||
+                $(e.target).closest('.menu__link').length ||
+                $(e.target).closest('.menu__dropdown').length ||
+                $(e.target).closest('.menu__item').length;
+
             const isClickOnMenuIcon = e.target === iconMenu[0] || $(e.target).closest(iconMenu).length;
 
-            if (!isClickInsideHeaderTop && !isClickOnMenuIcon) {
+            if (!isClickInsideMenu && !isClickOnMenuIcon) {
                 $('html').removeClass("menu-open");
             }
         });
